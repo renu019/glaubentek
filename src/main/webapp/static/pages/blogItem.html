@@ -1,0 +1,133 @@
+
+
+    <section id="blog" class="container">
+        <div class="center">
+            <h2 style="font-size: 2.5em;
+    color: #A0431B;
+    margin: 0em 0em 0.7em 0em;
+    text-align: center;">BLOG</h2>
+            <p class="lead" style="color: #c19808;">Bungalows, Villas, Duplex and Luxury Houses, Hotels at India</p>
+        </div>
+        <div class="blog">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="blog-item">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-2 text-center">
+                                <div class="entry-meta">
+                                    <span id="publish_date">{{singlePost.dateCreated | date:'MMM yyyy'}}</span>
+                                    <span><i class="fa fa-user"></i> <a href="#">{{singlePost.creator.username}}</a></span>
+                                    <!-- <span><i class="fa fa-comment"></i> <a href="blog-item.html#comments">2 Comments</a></span>
+                                    <span><i class="fa fa-heart"></i><a href="#">56 Likes</a></span> -->
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-10 blog-content">
+                                <!-- <a href="#"><img class="img-responsive img-blog" src="static/images/blog1.jpg" width="100%" alt="" /></a> -->
+                                <h2>{{singlePost.title}}</h2>
+                                <h4>
+                                    {{singlePost.fullText}},
+                                   
+                                </h4>
+                                <a class="btn btn-primary readmore" ui-sref="blog" >All Posts <i class="fa fa-long-arrow-left"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--/.blog-item-->
+
+                </div>
+                <!--/.col-md-8-->
+
+                <aside class="col-md-4">
+                    <!-- <div class="widget search">
+                        <form role="form">
+                            <input type="text" class="form-control search_box" autocomplete="off" placeholder="Search Here">
+                        </form>
+                    </div> -->
+                    <div>
+                        <img src="static/images/blog_image6.jpg" alt="" class="img-responsive">
+                    </div>
+                    <!--/.search-->
+
+                    <div class="widget categories">
+                        <h3>Recent Articles</h3>
+                        <div class="row">
+                            <div class="col-sm-12" ng-repeat = "recentPosts in recentPostsList">
+                                <div class="single_comments">
+                                    <img src="static/images/avatar3.png" alt="" />
+                                    <p>{{recentPosts.title}}</p>
+                                    <div class="entry-meta small muted">
+                                        <span>By <a href="#">{{recentPosts.creator.username}}</a></span> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/.recent comments-->
+
+
+                    <div class="widget categories">
+                        <h3>Categories</h3>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul class="blog_category">
+                                    <li><a href="#">Construction <span class="badge">04</span></a></li>
+                                    <li><a href="#">Construction <span class="badge">10</span></a></li>
+                                    <li><a href="#">Construction <span class="badge">06</span></a></li>
+                                    <li><a href="#">Stadium <span class="badge">25</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/.categories-->
+
+                    <div class="widget archieve">
+                        <h3>Archieve</h3>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <ul class="blog_archieve" ng-repeat="postsMonthly in postsMonthlyList">
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> {{postsMonthly.month | date: 'MMMM yyyy'}} <span class="pull-right">({{postsMonthly.postCount}})</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/.archieve-->
+
+                    <!-- <div class="widget tags">
+                        <h3>Tag Cloud</h3>
+                        <ul class="tag-cloud">
+                            <li><a class="btn btn-xs btn-primary" href="#">Apple</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Barcelona</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Office</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Ipod</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Stock</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Race</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">London</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Football</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Porche</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Gadgets</a></li>
+                        </ul>
+                    </div> -->
+                    <!--/.tags-->
+
+                    <div class="widget blog_gallery">
+                        <h3>Our Gallery</h3>
+                        <ul class="sidebar-gallery">
+                            <li><a href="#" onclick="return false;"><img src="static/images/BlogGallery3.jpg" alt="" /></a></li>
+                            <li><a href="#" onclick="return false;"><img src="static/images/BlogGallery4.jpg" alt="" /></a></li>
+                            <li><a href="#" onclick="return false;"><img src="static/images/BlogGallery6.jpg" alt="" /></a></li>
+                            <li><a href="#" onclick="return false;"><img src="static/images/BlogGallery7.jpg" alt="" /></a></li>
+                            <li><a href="#" onclick="return false;"><img src="static/images/BlogGallery2.jpg" alt="" /></a></li>
+                            <li><a href="#" onclick="return false;"><img src="static/images/BlogGallery5.jpg" alt="" /></a></li>
+                        </ul>
+                    </div>
+                    <!--/.blog_gallery-->
+                </aside>
+            </div>
+            <!--/.row-->
+        </div>
+    </section>
+    <!--/#blog-->
+
+   
