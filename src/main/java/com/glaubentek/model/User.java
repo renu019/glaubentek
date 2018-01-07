@@ -15,15 +15,17 @@ public class User {
 
     @JsonIgnore
     private String password;
-    @OneToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-    private List<Role> roles;
+    /*@OneToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+    private List<Role> roles;*/
+    
+    private String role;
 
     User() {}
 
-    public User(String username, String password, List<Role> roles) {
+    public User(String username, String password, String role) {
         this.username = username;
         this.password = password;
-        this.roles = roles;
+        this.role = role;
     }
 
     public String getUsername() {
@@ -42,15 +44,15 @@ public class User {
         this.password = password;
     }
 
-    public List<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(List<Role> roles) {
-        this.roles = roles;
-    }
-
     public Long getId() {
         return id;
     }
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
 }

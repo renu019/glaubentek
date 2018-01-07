@@ -1,10 +1,18 @@
 package com.glaubentek;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.csrf.CsrfFilter;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.security.web.csrf.CsrfTokenRepository;
@@ -25,19 +33,24 @@ import javax.servlet.http.HttpServletResponse;
 @EnableWebSecurity
 public class WebSecurityConfigAD extends WebSecurityConfigurerAdapter {
 	
+	@Autowired
+    @Qualifier("customUserDetailsService")
+    private UserDetailsService userDetailsService;
+	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
 		http
 	      .headers()
-	      .contentSecurityPolicy("default-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' *.googleapis.com; img-src 'self' 'unsafe-inline'; child-src 'self' 'unsafe-inline' data:; font-src 'self' 'unsafe-inline' *.gstatic.com;").and()
+	      .contentSecurityPolicy("default-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' *.googleapis.com; img-src 'self' 'unsafe-inline'; child-src 'self' 'unsafe-inline' data:; font-src 'self' 'unsafe-inline' *.gstatic.com; frame-src 'self' 'unsafe-inline' *.google.com;").and()
 			 .frameOptions()
 			 .sameOrigin()
 			   .httpStrictTransportSecurity().disable()
 	      .and()
 	      .authorizeRequests()
-	      .antMatchers("/createPost/**").permitAll()
-          .antMatchers("/**", "/home/**", "/aboutus/**", "/services/**", "/portfolio/**", "/blog/**", "/blogItem/**", "/sikariaHome/**", "/contactus/**",  "/resources/**", "/static/**").permitAll()
+	      //.antMatchers("/createPost/**").access("ROLE_ADMIN")
+          .antMatchers("/home/**", "/aboutus/**", "/services/**", "/portfolio/**", "/blog/**", "/blogItem/**", "/sikariaHome/**", "/contactus/**",  
+        		  		"/resources/**", "/static/**", "/").permitAll()
           .anyRequest().authenticated()
           .and()
       .formLogin()
@@ -59,6 +72,21 @@ public class WebSecurityConfigAD extends WebSecurityConfigurerAdapter {
 		//web.ignoring().antMatchers("/*");
 		//web.ignoring().antMatchers("/*.js");
 	}
+	
+	 @Autowired
+	    public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
+		 	auth.authenticationProvider(authenticationProvider());
+	    }
+	     
+	     
+	     
+	    @Bean
+	    public AuthenticationProvider authenticationProvider() {
+	        DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
+	        authenticationProvider.setUserDetailsService(userDetailsService);
+	        authenticationProvider.setPasswordEncoder(new BCryptPasswordEncoder());
+	        return authenticationProvider;	
+	    }
 	
 	private Filter csrfHeaderFilter() {
         return new OncePerRequestFilter() {

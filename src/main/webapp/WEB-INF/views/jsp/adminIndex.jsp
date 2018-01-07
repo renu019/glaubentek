@@ -34,7 +34,7 @@
 
 <main>
 
-  <page-header></page-header>
+  <admin-page-header></admin-page-header>
 
       <div ui-view ></div>
   
@@ -63,7 +63,7 @@
 
 <script src="<c:url value='/static/lib/app.js' />"></script>
 <script src="<c:url value='/static/lib/pages.module.js' />"></script>
-<script src="<c:url value='/static/app/directives/pageHeader.directive.js' />"></script>
+<script src="<c:url value='/static/app/directives/adminPageHeader.directive.js' />"></script>
 <script src="<c:url value='/static/app/directives/pageFooter.directive.js' />"></script>
 <script src="<c:url value='/static/app/service/blogService.js' />"></script>
 <script src="<c:url value='/static/app/service/postService.js' />"></script>

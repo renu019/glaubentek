@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Test Data Generation</title>
+  <title>GlaubApp</title>
 
   <link href="<c:url value='/static/css/main.css' />" rel="stylesheet" />
   <link href="<c:url value='/static/css/style.css' />" rel="stylesheet" />

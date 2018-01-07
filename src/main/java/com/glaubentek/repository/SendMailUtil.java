@@ -11,6 +11,8 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import com.glaubentek.pojo.MailContent;
@@ -77,6 +79,13 @@ public class SendMailUtil {
 		        }
 		
 		return "success";
+	}
+	
+	public static void main(String[] args) {
+		String password = "admin@123";
+		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		String hashedPassword = passwordEncoder.encode(password);
+		System.out.println("hashedPassword  ::  "+hashedPassword);
 	}
 
 }
