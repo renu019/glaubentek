@@ -1,0 +1,68 @@
+<div ng-include="'static/pages/headers/otherPagesHeader.html'"></div>
+<div class="contact w3agile">
+    <div class="container">
+       
+        <div class="contact-main w3l-co">
+
+            <div class="contact-right w3agile-co form-group">
+                <div class="contact-top">
+                    <h3>Post Lists</h3>
+                </div>
+                
+                	<div class="panel panel-default">
+			<!-- Default panel contents -->
+			<div class="panel-heading" style="background-color: #efe6f2">
+				<h3> Posts </h3>
+			</div>
+			<div class="tablecontainer">
+				<table class="table table-hover table-condensed">
+					<thead>
+						<tr>
+							<th>Sl No#</th>
+							<th>title</th>
+							<!-- <th>Short Text</th> -->
+							<th>Created Date</th>
+							<th>Actions</th>		
+							<th>
+								<button class="btn btn-success" ng-click="createNewPost()" value="Create Post">Create Post <span class="glyphicon glyphicon-plus"></span></button>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr dir-paginate="posts in postsList|itemsPerPage:postsFullList.size" total-items="postsFullList.totalElements">
+							<td>{{$index}}</td>
+							<td>{{posts.title}}</td>
+							<!-- <td>{{posts.shortText}}</td> -->
+							<td>{{posts.dateCreated | date:'dd MMM yyyy'}}</td>
+							<td>
+							<button class="btn btn-info btn-xs editable-table-button" ng-click="editPost(posts.id)">
+								<span class="glyphicon glyphicon-pencil"></span>
+							</button>
+							
+							<button class="btn btn-danger btn-xs editable-table-button" ng-click="deletePost(posts.id)">
+								<span class="glyphicon glyphicon-trash"></span>	
+							</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+		</div>
+                
+            </div>
+            
+            <div style="float: right;">
+            <dir-pagination-controls
+				        max-size="8"
+				        direction-links="true"
+				        boundary-links="true" 
+				        on-page-change="getData(newPageNumber)">
+			</dir-pagination-controls>
+			</div>
+			
+            
+        </div>
+    </div>
+</div>
+

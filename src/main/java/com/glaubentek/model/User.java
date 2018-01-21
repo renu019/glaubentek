@@ -3,6 +3,8 @@ package com.glaubentek.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -11,24 +13,41 @@ public class User {
     @Id
     @GeneratedValue
     private Long id;
+    
     private String username;
-
-    @JsonIgnore
+    
+	private String firstName;
+	
+	private String lastName;
+    
+    //@JsonIgnore
     private String password;
     /*@OneToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
     private List<Role> roles;*/
     
     private String role;
+    
+    private String mailId;
+    
+    private Date dateCreated;
 
-    User() {}
+    public User() {}
 
-    public User(String username, String password, String role) {
-        this.username = username;
-        this.password = password;
-        this.role = role;
-    }
 
-    public String getUsername() {
+    public User(Long id, String username, String firstName, String lastName, String password, String role, Date dateCreated, String mailId) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.password = password;
+		this.role = role;
+		this.dateCreated = dateCreated;
+		this.mailId = mailId;
+	}
+
+
+	public String getUsername() {
         return username;
     }
 
@@ -54,5 +73,41 @@ public class User {
 
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+
+	public Date getDateCreated() {
+		return dateCreated;
+	}
+
+
+	public void setDateCreated(Date dateCreated) {
+		this.dateCreated = dateCreated;
+	}
+
+
+	public String getMailId() {
+		return mailId;
+	}
+
+
+	public void setMailId(String mailId) {
+		this.mailId = mailId;
 	}
 }

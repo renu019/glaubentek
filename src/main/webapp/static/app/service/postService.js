@@ -4,10 +4,12 @@ angular.module('glaubentekapp').factory('postService', ['$http', '$q', function(
 
     var TAGS_REST_SERVICE_URI = 'tags';
     var POST_REST_SERVICE_URI = 'post';
+    var DELETE_POST_REST_SERVICE_URI = 'deletePost/';
     
     var factory = {
     		getTagList : getTagList,
-    		createPost : createPost
+    		createPost : createPost,
+    		deletePost : deletePost
     };
 
     return factory;
@@ -21,6 +23,21 @@ angular.module('glaubentekapp').factory('postService', ['$http', '$q', function(
             },
             function(errResponse){
                 console.error('Error while getTagList ');
+                deferred.reject(errResponse);
+            }
+        );
+        return deferred.promise;
+    }
+    
+    function deletePost(postId) {
+        var deferred = $q.defer();
+        $http.delete(DELETE_POST_REST_SERVICE_URI+postId)
+            .then(
+            function (response) {
+                deferred.resolve(response.data);
+            },
+            function(errResponse){
+                console.error('Error while deletePost in post service');
                 deferred.reject(errResponse);
             }
         );

@@ -1,41 +1,41 @@
 (function () {
   'use strict';
 
-  angular.module('glaubentekapp', [
-    'ui.router', 'angularjs-dropdown-multiselect', 'angularUtils.directives.dirPagination'
-  ]).config(routeConfig);
+  angular.module('glaubentekapp').config(routeConfig);
 
   /** @ngInject */
   function routeConfig($urlRouterProvider, $httpProvider, $stateProvider) {
 	  	
 	  $urlRouterProvider.when('', '/home');
 	  	
+	  new WOW().init();
+	  
 	    $stateProvider
 	    .state('home', {
 	      url: '/home',
 	      templateUrl: 'static/pages/home.html',
-	      controller: 'blogCtrl',
+	      controller: 'homeCtrl'
 	    });
 
 	    $stateProvider
 	    .state('aboutus', {
 	      url: '/aboutus',
 	      templateUrl: 'static/pages/aboutus.html',
-	      controller: 'blogCtrl',
+	      controller: 'homeCtrl'
 	    });
 	    
 	    $stateProvider
 	    .state('services', {
 	      url: '/services',
 	      templateUrl: 'static/pages/services.html',
-	      controller: 'blogCtrl',
+	      controller: 'homeCtrl'
 	    });
 	    
 	    $stateProvider
 	    .state('portfolio', {
 	      url: '/portfolio',
 	      templateUrl: 'static/pages/portfolio.html',
-	      controller: 'blogCtrl',
+	      controller: 'homeCtrl'
 	    });
 	    
 	    $stateProvider
@@ -47,7 +47,8 @@
 	    
 	    $stateProvider
 	    .state('blogItem', {
-	      url: '/blogItem/:postId',
+	      url: '/blogItem',
+	      params: {'postId': null},
 	      templateUrl: 'static/pages/blogItem.html',
 	      controller: 'blogCtrl'
 	    });
@@ -60,10 +61,25 @@
 	    });
 	    
 	    $stateProvider
+	    .state('editPost', {
+	      url: '/editPost',
+	      params: {'postId': null},
+	      templateUrl: 'static/pages/editPost.html',
+	      controller: 'postCtrl as pCtrl'
+	    });
+	    
+	    $stateProvider
+	    .state('listAllPosts', {
+	      url: '/listAllPosts',
+	      templateUrl: 'static/pages/listAllPosts.html',
+	      controller: 'postCtrl as pCtrl'
+	    });
+	    
+	    $stateProvider
 	    .state('sikariaHome', {
 	      url: '/sikariaHome',
 	      templateUrl: 'static/pages/sikariaHome.html',
-	      controller: 'blogCtrl',
+	      controller: 'SikariaHomesCtrl as sCtrl',
 	    });
 	    
 	    $stateProvider
@@ -76,7 +92,30 @@
 	    $stateProvider
 	    .state('tenderAlert', {
 	      url: '/tenderAlert',
-	      templateUrl: 'static/pages/tenderAlert.html'
+	      templateUrl: 'static/pages/tenderAlert.html',
+	      controller: 'homeCtrl'
+	    });
+	    
+	    $stateProvider
+	    .state('listAllUsers', {
+	      url: '/listAllUsers',
+	      templateUrl: 'static/pages/listAllUsers.html',
+	      controller: 'userCtrl as uCtrl'
+	    });
+	    
+	    $stateProvider
+	    .state('createUser', {
+	      url: '/createUser',
+	      templateUrl: 'static/pages/createUser.html',
+	      controller: 'userCtrl as uCtrl'
+	    });
+	    
+	    $stateProvider
+	    .state('editUser', {
+	      url: '/editUser',
+	      params: {'userId': null},
+	      templateUrl: 'static/pages/editUser.html',
+	      controller: 'userCtrl as uCtrl'
 	    });
 
   }

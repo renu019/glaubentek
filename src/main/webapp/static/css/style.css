@@ -8,6 +8,20 @@
 h4{margin: 0;font-family: 'Nixie One'; font-weight: 700;}
 ul, ol {margin: 0;}
 p {margin: 0;}
+
+
+.label_temp {
+    font-size: 1em;
+    color: #777;
+    padding: 0.5em;
+   font-family: 'Nixie One';
+    width: 49.5%;
+    outline: none;
+}
+
+.Sikaria_p{
+font-size: 0.95em; color: #767676; line-height: 1.8em; margin: 1em 0;font-family: 'Open Sans', sans-serif;
+}
 html, body{
 	font-family: 'Open Sans', sans-serif;
    font-size: 100%;
@@ -27,6 +41,46 @@ a:hover {
   -o-transition: 0.5s all;
   text-decoration: none;
 }
+
+/*--Sikaria home start here--*/
+
+.what-offer-widget {
+    text-align: center;
+    padding-top: 30px;
+}
+
+
+.what-offer-widget h2 {
+    padding-bottom: 60px;
+}
+/*.what-offer-widget .what-offer-card {
+    border-radius: 3px;
+    box-shadow: 1px  1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24),0 1px 2px rgba(0,0,0,0.24);
+    transition: all .2s ease-in-out 0s;
+}*/
+.what-offer-card {
+}
+.what-offer-card:hover {
+   background-color:#aab3bb;
+}
+.what-offer-widget .content {
+    padding: 32px 0;
+}
+.what-offer-widget p {
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.what-offer-widget span {
+    color: #48b39b;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+}
+.pad-r-20 {
+    padding-right: 20px;
+}
+/*--Sikaria Home End here--*/
+
 /*--marquee start here--*/
 
 
@@ -51,6 +105,11 @@ a:hover {
     background: url(../images/BannerHome_pages.jpg)no-repeat fixed;
     background-size: cover;
     min-height:320px;
+}
+.banner2 {
+    background: url(../images/pg_pic1.jpg)no-repeat center fixed;
+    background-size: cover;
+    min-height: 600px;
 }
 .header {
    
@@ -127,6 +186,7 @@ ul.nav.navbar-nav li a.active {
     margin-top: 15em;
     width: 40%;
 }
+
 .banner-bottom h2 {
     font-size: 1.5em;
     color: #fff;
@@ -139,6 +199,18 @@ ul.nav.navbar-nav li a.active {
     opacity: 0.90;
 }
 .bann-para p {
+    font-size: 1em;
+    color: #d4e0d6;
+    line-height: 1.8em;
+}
+.bann-para1 {
+   margin-top: 3em;
+   margin-bottom:1.5em;
+    padding: 1.5em;
+    background: #26324a;
+    opacity: 0.90;
+}
+.bann-para1 p {
     font-size: 1em;
     color: #d4e0d6;
     line-height: 1.8em;
@@ -1191,6 +1263,9 @@ textarea {
 .banner {
     min-height: 600px;
 }
+.banner2 {
+    min-height: 600px;
+}
 .banner-bottom {
     margin-top: 6em;
 }
@@ -1382,6 +1457,9 @@ span.quot1 {
     width: 50%;
 }
 .banner {
+    min-height:430px;
+}
+.banner2 {
     min-height:430px;
 }
 .banner-bottom {
@@ -2192,29 +2270,4 @@ figure.effect-bubba h4.gal {
 .page-header h3 {
     font-size: 1.7em;
 }
-
-multiselect {
-    display:block;
 }
-multiselect .btn {
-    width: 100%;
-    background-color: #FFF;
-}
-multiselect .btn.error{
-    border: 1px solid #da4f49 !important;
-}
-multiselect .dropdown-menu {
-    max-height: 300px;
-    overflow-y: auto;
-}
-multiselect .dropdown-menu {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 2px;
-}
-multiselect .dropdown-menu > li > a {
-    padding: 3px 10px;
-    cursor:pointer;
-}
-
-

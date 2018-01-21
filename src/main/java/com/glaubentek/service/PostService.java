@@ -25,13 +25,13 @@ public class PostService {
         return postRepository.findAll(pageRequest);
     }
     
-    public Page<Post> findByTags(List<String> tags, int pageNumber, int pageSize) {
+    /*public Page<Post> findByTags(List<String> tags, int pageNumber, int pageSize) {
         tags = tags.stream().map(String::toLowerCase).collect(Collectors.toList());
 
         PageRequest pageRequest = new PageRequest(pageNumber, pageSize, Sort.Direction.DESC, "dateCreated");
         
     	return postRepository.findByTags(tags, (long) tags.size(), pageRequest);
-    }
+    }*/
     
     public List<Object[]> findPostByMonth() {
 		return postRepository.findPostByMonth();
@@ -69,6 +69,10 @@ public class PostService {
 	public Post updatePost(Post post) {
 		return postRepository.saveAndFlush(post);
 		
+	}
+
+	public List<Object[]> findTagsAndCount() {
+		return postRepository.findTagsAndCount();
 	}
 
 

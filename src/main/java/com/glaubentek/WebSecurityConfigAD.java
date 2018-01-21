@@ -20,6 +20,8 @@ import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository;
 import org.springframework.web.filter.OncePerRequestFilter;
 import org.springframework.web.util.WebUtils;
 
+import com.glaubentek.utils.EncryptDecryptUtil;
+
 import java.io.IOException;
 
 import javax.servlet.Filter;
@@ -42,15 +44,18 @@ public class WebSecurityConfigAD extends WebSecurityConfigurerAdapter {
 
 		http
 	      .headers()
-	      .contentSecurityPolicy("default-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' *.googleapis.com; img-src 'self' 'unsafe-inline'; child-src 'self' 'unsafe-inline' data:; font-src 'self' 'unsafe-inline' *.gstatic.com; frame-src 'self' 'unsafe-inline' *.google.com;").and()
+	      .contentSecurityPolicy("default-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' *.googleapis.com; img-src 'self' 'unsafe-inline'; child-src 'self' 'unsafe-inline' data:; font-src 'self' 'unsafe-inline' *.gstatic.com; frame-src 'self' 'unsafe-inline' *").and()
 			 .frameOptions()
 			 .sameOrigin()
 			   .httpStrictTransportSecurity().disable()
 	      .and()
 	      .authorizeRequests()
-	      //.antMatchers("/createPost/**").access("ROLE_ADMIN")
-          .antMatchers("/home/**", "/aboutus/**", "/services/**", "/portfolio/**", "/blog/**", "/blogItem/**", "/sikariaHome/**", "/contactus/**",  
-        		  		"/resources/**", "/static/**", "/").permitAll()
+	      .antMatchers("/createPost/**", "/editPost/**", "/listAllPosts/**", "/post/**", "/deletePost/**", "/allUsers/**", "/user/**", 
+	    		  		"/listAllUsers/**", "/editUser/**", "/createUser/**", "/deleteUser/**", "/tenderAlert/**").access("hasRole('ADMIN')")
+          .antMatchers("/", "/home/**", "/aboutus/**", "/services/**", "/portfolio/**", "/blog/**", "/blogItem/**", "/sikariaHome/**", "/contactus/**",
+        		  		"/allPosts/**","/the_post/**","/postByMonth/**","/recentPosts/**", "/tagAndCount/**", "/sendMail/**", "/sendMailSikaria/**",
+        		  		"/getUsername/**", "/userRole/**",
+        		  		"/resources/**", "/static/**").permitAll()
           .anyRequest().authenticated()
           .and()
       .formLogin()
@@ -59,11 +64,10 @@ public class WebSecurityConfigAD extends WebSecurityConfigurerAdapter {
           .and()
       .logout()
       	.permitAll().and()
-      	.csrf().disable();
-		   /*.csrfTokenRepository(csrfTokenRepository())
+      	.csrf().csrfTokenRepository(csrfTokenRepository())
         .and()
         .addFilterAfter(csrfHeaderFilter(), CsrfFilter.class)
-        .authorizeRequests();*/
+        .authorizeRequests();
 
 	}
 
@@ -76,7 +80,7 @@ public class WebSecurityConfigAD extends WebSecurityConfigurerAdapter {
 	 @Autowired
 	    public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
 		 	auth.authenticationProvider(authenticationProvider());
-	    }
+	 }
 	     
 	     
 	     
@@ -84,7 +88,7 @@ public class WebSecurityConfigAD extends WebSecurityConfigurerAdapter {
 	    public AuthenticationProvider authenticationProvider() {
 	        DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
 	        authenticationProvider.setUserDetailsService(userDetailsService);
-	        authenticationProvider.setPasswordEncoder(new BCryptPasswordEncoder());
+	        //authenticationProvider.setPasswordEncoder(new EncryptDecryptUtil());
 	        return authenticationProvider;	
 	    }
 	

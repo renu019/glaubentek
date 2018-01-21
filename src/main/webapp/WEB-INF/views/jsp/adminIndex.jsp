@@ -27,6 +27,7 @@
 	<link href="<c:url value='/static/css/site.css' />" rel="stylesheet" />
 	<link href="<c:url value='/static/css/style.css' />" rel="stylesheet" />
 	<link href="<c:url value='/static/css/Blog-style.css' />" rel="stylesheet" />
+	<link href="<c:url value='/static/css/main.css' />" rel="stylesheet" />
 
 </head>
 <body>
@@ -44,6 +45,11 @@
 
 <script src="<c:url value='/static/lib/angular.js' />"></script>
 <script src="<c:url value='/static/lib/angular-ui-router.js' />"></script>
+<script src="<c:url value='/static/lib/angular-animate.js' />"></script>
+<script src="<c:url value='/static/lib/ui-bootstrap-tpls-1.3.2.js' />"></script>
+<script src="<c:url value='/static/lib/angularjs-dropdown-multiselect.js' />"></script>
+<script src="<c:url value='/static/lib/ticker.js' />"></script>
+<script src="<c:url value='/static/lib/slides.js' />"></script>
 
 <script src="<c:url value='/static/lib/jquery-1.11.0.min.js' />"></script>
 <script src="<c:url value='/static/lib/bootstrap.min.js' />"></script>
@@ -68,9 +74,11 @@
 <script src="<c:url value='/static/app/service/blogService.js' />"></script>
 <script src="<c:url value='/static/app/service/postService.js' />"></script>
 <script src="<c:url value='/static/app/service/contactUsService.js' />"></script>
+<script src="<c:url value='/static/app/service/userService.js' />"></script>
 <script src="<c:url value='/static/app/controller/blogCtrl.js' />"></script>
 <script src="<c:url value='/static/app/controller/postCtrl.js' />"></script>
 <script src="<c:url value='/static/app/controller/contactUsCtrl.js' />"></script>
+<script src="<c:url value='/static/app/controller/userCtrl.js' />"></script>
 
 
 

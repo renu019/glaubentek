@@ -33,10 +33,13 @@ public class Post {
 	//@Fetch(value = FetchMode.SUBSELECT)
 	private List<Comment> comments;
     
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "post", cascade = CascadeType.ALL)
+    /*@OneToMany(fetch = FetchType.LAZY, mappedBy = "post", cascade = CascadeType.ALL)
 	//@Fetch(value = FetchMode.SUBSELECT)
-	private List<Tag> tags;
-
+	private List<Tag> tags;*/
+    
+    @Column(name="category")
+    private String category;
+    
     public Post() {
     }
 
@@ -96,11 +99,19 @@ public class Post {
 		this.comments = comments;
 	}
 
-	public List<Tag> getTags() {
+	/*public List<Tag> getTags() {
 		return tags;
 	}
 
 	public void setTags(List<Tag> tags) {
 		this.tags = tags;
+	}*/
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 }

@@ -7,21 +7,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.glaubentek.pojo.MailContent;
+import com.glaubentek.pojo.SikariaContent;
 import com.glaubentek.utils.SendMailUtil;
 
 @RestController
-public class ContactUsController {
-
+public class SikariaHomesController {
 	@Autowired
 	private SendMailUtil sendMailUtil;
 	
-    @PostMapping(value="/sendMail")
-    public ResponseEntity<Void> publishPost(@RequestBody MailContent mailContent){
+    @PostMapping(value="/sendMailSikaria")
+    public ResponseEntity<Void> publishPost(@RequestBody SikariaContent mailContent){
     	
-    	String message = sendMailUtil.sendMail(mailContent);
+    	String message = sendMailUtil.sendMailSikaria(mailContent);
     	
         return new ResponseEntity<Void>(HttpStatus.CREATED);
     }
-	
 }

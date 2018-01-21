@@ -80,14 +80,20 @@
                         <li><a href="gallery.html">SikariaHome</a></li>
                         <li><a href="contact.html">Contact</a></li> -->
                         <li class="active"><a href="#/home">Home</a></li>
-			            <li><a href="#/aboutus">About Us</a></li>
+			            <!-- <li><a href="#/aboutus">About Us</a></li>
 			            <li><a href="#/services">What We Do</a></li>
-			            <li><a href="#/portfolio">Portofolio</a></li>
+			            <li><a href="#/portfolio">Portofolio</a></li> -->
 			            <li><a href="#/blog">Blog</a></li>
-			            <li><a href="#/sikariaHome">SikariaHome</a></li>
-			            <li><a href="#/contactus">Contact</a></li>
-			            <li><a href="#/createUser">User Creation</a></li>
-                        
+			            <li><a href="#/listAllPosts">Posts</a></li>
+			            <li><a href="#/tenderAlert">Tender Notifications</a></li>
+			            <li><a href="#/listAllUsers">Manage Users</a></li>
+			            
+			            <li><a href="javascript:document.getElementById('logout').submit()">Logout</a>
+						</li>
+						<form id="logout" action="logout" method="post" >
+			  						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+						</form>
+			            
                     </ul>
                 </div>
             </div>

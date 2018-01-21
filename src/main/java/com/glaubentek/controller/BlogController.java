@@ -11,6 +11,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -63,13 +64,13 @@ public class BlogController {
         return postService.getPost(id);
     }
     
-    @GetMapping(value="/postByTag/{tags}")
+    /*@GetMapping(value="/postByTag/{tags}")
     public Page<Post> getPostByTag(@PathVariable("tags") String tags) {
     	
     	List<String> tagNames = Arrays.stream(tags.split(",")).map(String::trim).distinct().collect(Collectors.toList());
     	
         return postService.findByTags(tagNames, 0, 10);
-    }
+    }*/
     
     @GetMapping(value="/postByMonth")
     public List<MonthAndCount> getPostByMonth() {
@@ -110,22 +111,22 @@ public class BlogController {
         	comment.setCreator(userService.getUser("admin"));
         }*/
         
-        List<Tag> tagList = post.getTags();
+        /*List<Tag> tagList = post.getTags();
         for(Tag tag : tagList) {
         	tag.setPost(post);
-        }
+        }*/
         
         postService.insert(post);
         return new ResponseEntity<Void>(HttpStatus.CREATED);
     }
     
     @PutMapping(value="/post")
-    public String updatePost(@RequestBody Post post){
+    public ResponseEntity<Void> updatePost(@RequestBody Post post){
         //CustomUserDetails userDetails = (CustomUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if(post.getDateCreated() == null)
             post.setDateCreated(new Date());
         //post.setCreator(userService.getUser(userDetails.getUsername()));
-        post.setCreator(userService.getUser("admin"));
+        post.setCreator(userService.getUser(SecurityContextHolder.getContext().getAuthentication().getName()));
         
         if(post.getFullText() != null) {
         	post.setShortText(post.getFullText().substring(0, 250));
@@ -137,13 +138,13 @@ public class BlogController {
         	comment.setCreator(userService.getUser("admin"));
         }*/
         
-        List<Tag> tagList = post.getTags();
+        /*List<Tag> tagList = post.getTags();
         for(Tag tag : tagList) {
         	tag.setPost(post);
-        }
+        }*/
         
         postService.updatePost(post);
-        return "Post was updated";
+        return new ResponseEntity<Void>(HttpStatus.OK);
     }
     
     
@@ -153,9 +154,11 @@ public class BlogController {
         return postService.findByUser(userService.getUser(username));
     }
 
-    @DeleteMapping(value = "/post/{id}")
-    public boolean deletePost(@PathVariable Long id){
-        return postService.deletePost(id);
+    @DeleteMapping(value = "/deletePost/{postId}")
+    public ResponseEntity<Void> deletePost(@PathVariable Long postId){
+    	System.out.println("postId  ::  "+postId);
+        postService.deletePost(postId);
+        return new ResponseEntity<Void>(HttpStatus.OK);
     }
 
     @DeleteMapping(value = "/comment/{id}")
@@ -197,7 +200,7 @@ public class BlogController {
     @GetMapping(value="/tagAndCount")
     public List<TagAndCount> getTagAndCount() {
     	
-    	List<Object[]> tagCount = tagService.findTagsAndCount();
+    	List<Object[]> tagCount = postService.findTagsAndCount();
     			
     	List<TagAndCount> tagCountList = new ArrayList<TagAndCount>();
     	for(Object[] obj : tagCount) {

@@ -1,3 +1,4 @@
+<div ng-include="'static/pages/headers/homePageHeader.html'"></div>
 <div class="welcome w3l">
     <div class="container">
         <div class="wel-main">
@@ -137,37 +138,39 @@
                     <div class="line-2"></div>
                 </div>
                 <div class="wprt-spacer" data-desktop="50" data-mobi="40" data-smobi="40"></div>
-                <div class="wprt-toggle style-1">
-                    <h3 class="toggle-title">We have 15 plus years in the building industry</h3>
-                    <div class="toggle-content">
-                        Backed by experience of highly skilled professionals, we coordinate and understand  exact requirements and offer best solutions fulfilling all needs.
-                        Over the years, we have consistently we are providing construction development and innovations in the field of Civil & Interior work.
-                    </div>
-                </div>
-                <div class="wprt-toggle active style-1">
-                    <h3 class="toggle-title">Quality construction continues </h3>
-                    <div class="toggle-content">
-                        With a decade of experience that we have, we are
-                        capable to do your jobs as per your satisfaction with the most competitive rates in a time bound schedule.We are a
-                        Proprietorship Enterprise from Gurgaon dedicated to providing you,
-                        our customers, with the highest quality in Construction & Contracting services.
-                    </div>
-                </div>
-                <div class="wprt-toggle style-1">
-                    <h3 class="toggle-title">We use technology to do the job more quickly</h3>
-                    <div class="toggle-content">
-                        Over the years, we have consistently adapted new technologies and innovations in the field of Civil & Interior work.With OM BuildTech Builder
-                        you get a worry-free high Quality construction experience from the start brief up to the delivery of the finished project
-                    </div>
-                </div>
-                <div class="wprt-toggle style-1">
-                    <h3 class="toggle-title"> Trained and Professioal Employees </h3>
-                    <div class="toggle-content">
-                        Our professional and trained team co-ordinates well with the junior & subordinate level staff to render the very good services
-                        that we are known for. Deal with a small group of professionals whose goal is to make the construction process
-                        not only enjoyable but also easy to understand.
-                    </div>
-                </div>
+                <uib-accordion close-others="true">
+			    <uib-accordion-group heading="We have 15 plus years in the building industry" is-open="status.open1" panel-class="panel-warning">
+			    <uib-accordion-heading>
+			        <i class="pull-left glyphicon" ng-class="{'glyphicon-minus': status.open1, 'glyphicon-plus': !status.open1}"></i>  We have 15 plus years in the building industry <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open1, 'glyphicon-chevron-right': !status.open1}"></i>
+			    </uib-accordion-heading>
+			      	Backed by experience of highly skilled professionals, we coordinate and understand  exact requirements and offer best solutions fulfilling all needs.
+                  	Over the years, we have consistently we are providing construction development and innovations in the field of Civil & Interior work.
+			    </uib-accordion-group>
+			    <uib-accordion-group ng-init="status.open2=true" is-open="status.open2" panel-class="panel-warning">
+			    <uib-accordion-heading>
+			        <i class="pull-left glyphicon" ng-class="{'glyphicon-minus': status.open2, 'glyphicon-plus': !status.open2}"></i>  Quality construction continues <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open2, 'glyphicon-chevron-right': !status.open2}"></i>
+			    </uib-accordion-heading>
+			      	With a decade of experience that we have, we are
+                    capable to do your jobs as per your satisfaction with the most competitive rates in a time bound schedule.We are a
+                    Proprietorship Enterprise from Gurgaon dedicated to providing you,
+                    our customers, with the highest quality in Construction & Contracting services.
+			    </uib-accordion-group>
+			    <uib-accordion-group is-open="status.open3" panel-class="panel-warning">
+			    <uib-accordion-heading>
+			        <i class="pull-left glyphicon" ng-class="{'glyphicon-minus': status.open3, 'glyphicon-plus': !status.open3}"></i>  We use technology to do the job more quickly <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open3, 'glyphicon-chevron-right': !status.open3}"></i>
+			    </uib-accordion-heading>
+			      	Over the years, we have consistently adapted new technologies and innovations in the field of Civil & Interior work.With OM BuildTech Builder
+                    you get a worry-free high Quality construction experience from the start brief up to the delivery of the finished project
+			    </uib-accordion-group>
+			    <uib-accordion-group is-open="status.open4" panel-class="panel-warning">
+			      <uib-accordion-heading>
+			       <i class="pull-left glyphicon" ng-class="{'glyphicon-minus': status.open4, 'glyphicon-plus': !status.open4}"></i>  Trained and Professioal Employees <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open4, 'glyphicon-chevron-right': !status.open4}"></i>
+			      </uib-accordion-heading>
+			      	 Our professional and trained team co-ordinates well with the junior & subordinate level staff to render the very good services
+                     that we are known for. Deal with a small group of professionals whose goal is to make the construction process
+                     not only enjoyable but also easy to understand.
+			    </uib-accordion-group>
+			  </uib-accordion>
             </div><!-- /.col-md-6 -->
             <div class="col-md-6">
                 <div class="wprt-spacer" data-desktop="70" data-mobi="60" data-smobi="60"></div>
@@ -179,25 +182,36 @@
                 <div class="wprt-spacer" data-desktop="50" data-mobi="40" data-smobi="40"></div>
                 <div class="wprt-galleries galleries w-570px" data-width="135" data-margin="10">
                     <div id="wprt-slider" class="flexslider">
-                        <ul class="slides">
-                            <li class="flex-active-slide">
-                                <a class="zoom" href="static/images/gg3.jpg"><i class="fa fa-arrows-alt"></i></a>
-                                <img src="static/images/gg3.jpg" alt="image" />
-                            </li>
-                            <li class="flex-active-slide">
-                                <a class="zoom" href="static/images/gg3.jpg"><i class="fa fa-arrows-alt"></i></a>
-                                <img src="static/images/gg3.jpg" alt="image" />
-                            </li>
-                            <li class="flex-active-slide">
-                                <a class="zoom" href="static/images/gg1.jpg"><i class="fa fa-arrows-alt"></i></a>
-                                <img src="static/images/gg1.jpg" alt="image" />
-                            </li>
-                            <li class="flex-active-slide">
-                                <a class="zoom" href="static/images/gg8.jpg"><i class="fa fa-arrows-alt"></i></a>
-                                <img src="static/images/gg8.jpg" alt="image" />
-                            </li>
-
-                        </ul>
+                        <div uib-carousel interval="3000"  active="active">
+				            <div uib-slide index="0">
+				                <img ng-src="static/images/gg2.jpg">
+				                <div class="carousel-caption">
+				                    <p>
+				                    <p/>
+				                </div>
+				            </div>
+				            <div uib-slide index="1">
+				                <img ng-src="static/images/gg3.jpg" />
+				                <div class="carousel-caption">
+				                    <p>
+				                    </p>
+				                </div>
+				            </div>
+				            <div uib-slide index="2">
+				                <img ng-src="static/images/gg8.jpg" />
+				                <div class="carousel-caption">
+				                    <p>
+				                    </p>
+				                </div>
+				            </div>
+				            <div uib-slide index="3">
+				                <img ng-src="static/images/gg1.jpg" />
+				                <div class="carousel-caption">
+				                    <p>
+				                    </p>
+				                </div>
+				            </div>
+				    </div>
                     </div>
                     <div id="wprt-carousel" class="flexslider">
                         <ul class="slides">
@@ -237,6 +251,7 @@
          -->    
 
         <!--news strat here-->
+        
         <div class="panel panel-default" style="margin-right: 30px !important;margin-bottom:0px!important;">
             <div class="panel-heading"> <span class="glyphicon glyphicon-list-alt"></span><b>Latest Updates/News/Articles</b></div>
             <div class="panel-body">
@@ -295,25 +310,5 @@
    
     </div>
     <div class="clearfix" > </div>
-
-    <script type="text/javascript">
-    $(function () {
-        $(".demo").bootstrapNews({
-            newsPerPage: 4,
-            navigation: true,
-            autoplay: true,
-            direction: 'up', // up or down
-            animationSpeed: 'normal',
-            newsTickerInterval: 4000, //4 secs
-            pauseOnHover: true,
-            onStop: null,
-            onPause: null,
-            onReset: null,
-            onPrev: null,
-            onNext: null,
-            onToDo: null
-        });
-    });
-    </script>
 
 </div>
