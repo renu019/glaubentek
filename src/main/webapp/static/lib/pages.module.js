@@ -5,6 +5,7 @@
 
   /** @ngInject */
   function routeConfig($urlRouterProvider, $httpProvider, $stateProvider) {
+	  
 	  	
 	  $urlRouterProvider.when('', '/home');
 	  	
@@ -14,28 +15,25 @@
 	    .state('home', {
 	      url: '/home',
 	      templateUrl: 'static/pages/home.html',
-	      controller: 'homeCtrl'
+	      controller: 'homeCtrl as hCtrl'
 	    });
 
 	    $stateProvider
 	    .state('aboutus', {
 	      url: '/aboutus',
-	      templateUrl: 'static/pages/aboutus.html',
-	      controller: 'homeCtrl'
+	      templateUrl: 'static/pages/aboutus.html'
 	    });
 	    
 	    $stateProvider
 	    .state('services', {
 	      url: '/services',
-	      templateUrl: 'static/pages/services.html',
-	      controller: 'homeCtrl'
+	      templateUrl: 'static/pages/services.html'
 	    });
 	    
 	    $stateProvider
 	    .state('portfolio', {
 	      url: '/portfolio',
-	      templateUrl: 'static/pages/portfolio.html',
-	      controller: 'homeCtrl'
+	      templateUrl: 'static/pages/portfolio.html'
 	    });
 	    
 	    $stateProvider

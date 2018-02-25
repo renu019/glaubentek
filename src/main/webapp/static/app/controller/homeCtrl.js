@@ -2,67 +2,38 @@
   'use strict';
 
   angular.module('glaubentekapp')
-      .controller('blogCtrl', blogCtrl);
+      .controller('homeCtrl', homeCtrl);
 
   /** @ngInject */
-  function blogCtrl($scope, $http, blogService, $stateParams, $state) {
+  function homeCtrl($scope, $http, blogService, $stateParams, $state) {
+	  
+	  var self = this;
 	  
 	  new WOW().init();
 	  
-	  $(function () {
-	        $(".demo").bootstrapNews({
-	            newsPerPage: 4,
-	            navigation: true,
-	            autoplay: true,
-	            direction: 'up', // up or down
-	            animationSpeed: 'normal',
-	            newsTickerInterval: 4000, //4 secs
-	            pauseOnHover: true,
-	            onStop: null,
-	            onPause: null,
-	            onReset: null,
-	            onPrev: null,
-	            onNext: null,
-	            onToDo: null
-	        });
-	    });
-	  
-	  getAllPosts(1);
 	  getRecentPosts();
-	  getPostsByMonth();
-	  getTagAndCount();
 	  
-	  var postId = $stateParams.postId;
-	  console.log('postId  ::  '+postId);
-	  
-	  if(postId != undefined) {
-		  getPostsById(postId);
-	  }
-	  
-	  console.log('$scope.postId  ::  '+$scope.postId);
-	  
-	function getAllPosts(pageNo) {
-		console.log("inside getAllPosts");
-		blogService.getAllPosts(pageNo).then(
-   	            function(d) {
-   	            	$scope.postsList = d.content;
-   	            	$scope.postsFullList = d;
-   	            	console.log('$scope.postsFullList  ::  ',$scope.postsFullList);
-   	            	/*angular.forEach(d, function(value, key){
-   	            		
-   	         		});*/
-   	            },function(errResponse){
-   	              console.error('Error while getAllPosts');
-   	            }
-   	 );
-	}
-	
 	function getRecentPosts() {
 		console.log("inside getAllPosts");
 		blogService.getRecentPosts().then(
    	            function(d) {
    	            	$scope.recentPostsList = d;
+   	            	self.recentPostsList = d;
    	            	console.log('$scope.recentPostsList  ::  ',$scope.recentPostsList);
+   	            	
+   	            	if($scope.recentPostsList != null && $scope.recentPostsList.length > 4) {
+   	            		/*for(var i = 0;i<$scope.recentPostsList.length;i++) {
+   	            			if(i == 0) {
+   	            				$scope.recentPost1 = $scope.recentPostsList[i];
+   	            			}
+   	            			console.log("$scope.recentPostsList all  ::  "+$scope.recentPostsList[i].shortText);   	            		
+   	            		}*/
+   	            		$scope.recentPost1 = $scope.recentPostsList[0];
+   	            		$scope.recentPost2 = $scope.recentPostsList[1];
+   	            		$scope.recentPost3 = $scope.recentPostsList[2];
+   	            		$scope.recentPost4 = $scope.recentPostsList[3];
+   	            	}
+   	            	
    	            	/*angular.forEach(d, function(value, key){
    	            		
    	         		});*/
@@ -72,50 +43,23 @@
    	 );
 	}
 	
-	function getTagAndCount() {
-		console.log("inside getTagAndCount");
-		blogService.getTagAndCount().then(
-   	            function(d) {
-   	            	$scope.tagCountList = d;
-   	            	console.log('$scope.tagCountList  ::  ',$scope.tagCountList);
-   	            	/*angular.forEach(d, function(value, key){
-   	            		
-   	         		});*/
-   	            },function(errResponse){
-   	              console.error('Error while getTagAndCount');
-   	            }
-   	 );
-	}
-	
-	function getPostsByMonth() {
-		console.log("inside getPostsByMonth");
-		blogService.getPostsByMonth().then(
-   	            function(d) {
-   	            	$scope.postsMonthlyList = d;
-   	            	console.log('$scope.postsMonthlyList  ::  ',$scope.postsMonthlyList);
-   	            	/*angular.forEach(d, function(value, key){
-   	            		
-   	         		});*/
-   	            },function(errResponse){
-   	              console.error('Error while getPostsByMonth');
-   	            }
-   	 );
-	}
-	
-	function getPostsById(postId) {
-		console.log("inside getPostsById  ::  "+postId);
-		blogService.getPostsById(postId).then(
-   	            function(d) {
-   	            	$scope.singlePost = d;
-   	            	console.log('$scope.singlePost  ::  ',$scope.singlePost);
-   	            	/*angular.forEach(d, function(value, key){
-   	            		
-   	         		});*/
-   	            },function(errResponse){
-   	              console.error('Error while getPostsById');
-   	            }
-   	 );
-	}
+	$(function () {
+        $(".demo").bootstrapNews({
+            newsPerPage: 5,
+            navigation: true,
+            autoplay: true,
+            direction: 'up', // up or down
+            animationSpeed: 'normal',
+            newsTickerInterval: 4000, //4 secs
+            pauseOnHover: true,
+            onStop: null,
+            onPause: null,
+            onReset: null,
+            onPrev: null,
+            onNext: null,
+            onToDo: null
+        });
+    });
 	
 	$scope.getLinkUrl = function(postId) {
 		console.log("postId  ::  "+postId);
@@ -126,11 +70,6 @@
 		  console.log("postId  ::  "+postId);
 		  $state.go("blogItem",{'postId':postId})
 	  }
-	
-	$scope.getData = function(pageNo) {
-		console.log("pageNo  ::  "+pageNo);
-		getAllPosts(pageNo);
-	}
 	
   }
 

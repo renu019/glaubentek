@@ -1,5 +1,49 @@
 <div ng-include="'static/pages/headers/sikariaPageHeader.html'"></div>
 
+<div class="container">
+
+	<div class="row">
+
+		<div class="col-md-6">
+
+			<!-- DEMO BEGIN -->
+			<div class="panel panel-default">
+
+				<div class="panel-heading">
+					<strong>multiple images</strong> | thumbnails | modal + controls
+				</div>
+
+				<div class="panel-body asg-custom">
+
+					<pre data-ng-if="showOptions1">{{ sCtrl.options1|json}}</pre>
+
+					<!-- ASG BEGIN -->
+					<asg-image data-id="nature" data-options="sCtrl.options1" data-items="sCtrl.files1">
+						<asg-modal>
+							<asg-thumbnail></asg-thumbnail>
+						</asg-modal>
+					</asg-image>
+					<asg-thumbnail data-id="nature"></asg-thumbnail>
+					<hr>
+					<!-- <strong>custom panel</strong> | auto select the image when mouseover
+					<asg-panel data-id="nature" class="custom-panel" data-options="sCtrl.options1" data-items="sCtrl.files1"></asg-panel> -->
+					<!-- ASG END -->
+
+				</div>
+
+			</div>
+			<!-- DEMO END -->
+
+		</div>
+
+		<div class="col-md-6">
+
+		</div>
+
+	</div>
+
+</div>
+
 <!--What we offer start-->
 <section>
 	<div class=" what-offer-widget">

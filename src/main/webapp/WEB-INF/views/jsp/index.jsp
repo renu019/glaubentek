@@ -26,6 +26,10 @@
 	<link href="<c:url value='/static/css/site.css' />" rel="stylesheet" />
 	<link href="<c:url value='/static/css/style.css' />" rel="stylesheet" />
 	<link href="<c:url value='/static/css/Blog-style.css' />" rel="stylesheet" />
+	<link href="<c:url value='/static/css/angular-super-gallery.css' />" rel="stylesheet" />
+	<link href="<c:url value='/static/css/bootstrap-markdown.min.css' />" rel="stylesheet" />
+	<link href="<c:url value='/static/css/github.min.css' />" rel="stylesheet" />
+	<link href="<c:url value='/static/css/angular-markdown-editor.css' />" rel="stylesheet" />
 	<link href="<c:url value='/static/css/main.css' />" rel="stylesheet" />
 
 </head>
@@ -123,16 +127,20 @@
   
 </main>
 
+<script src="<c:url value='/static/lib/jquery-1.11.0.min.js' />"></script>
+<script src="<c:url value='/static/lib/bootstrap.min.js' />"></script>
 <script src="<c:url value='/static/lib/angular.js' />"></script>
 <script src="<c:url value='/static/lib/angular-ui-router.js' />"></script>
 <script src="<c:url value='/static/lib/angular-animate.js' />"></script>
+<script src="<c:url value='/static/lib/angular-touch.js' />"></script>
+<script src="<c:url value='/static/lib/angular-sanitize.js' />"></script>
+<script src="<c:url value='/static/lib/angular-route.js' />"></script>
 <script src="<c:url value='/static/lib/ui-bootstrap-tpls-1.3.2.js' />"></script>
 <script src="<c:url value='/static/lib/angularjs-dropdown-multiselect.js' />"></script>
 <script src="<c:url value='/static/lib/ticker.js' />"></script>
 <script src="<c:url value='/static/lib/slides.js' />"></script>
+<script src="<c:url value='/static/lib/screenfull.js' />"></script>
 
-<script src="<c:url value='/static/lib/jquery-1.11.0.min.js' />"></script>
-<script src="<c:url value='/static/lib/bootstrap.min.js' />"></script>
 <script src="<c:url value='/static/lib/jquery.bootstrap.newsbox.js' />"></script>
 <script src="<c:url value='/static/lib/jquery.bootstrap.newsbox.min.js' />"></script>
 <script src="<c:url value='/static/lib/jquery.chocolat.js' />"></script>
@@ -141,6 +149,16 @@
 <script src="<c:url value='/static/lib/animsition.js' />"></script>
 <script src="<c:url value='/static/lib/flexslider.js' />"></script>
 <script src="<c:url value='/static/lib/main.js' />"></script>
+
+<script src="<c:url value='/static/lib/marked.js' />"></script>
+<script src="<c:url value='/static/lib/angular-marked.js' />"></script>
+<script src="<c:url value='/static/lib/bootstrap-markdown.js' />"></script>
+<script src="<c:url value='/static/lib/highlight.min.js' />"></script>
+<script src="<c:url value='/static/lib/angular-highlightjs.min.js' />"></script>
+<script src="<c:url value='/static/lib/angular-markdown-editor.js' />"></script>
+<script src="<c:url value='/static/lib/angular-md.js' />"></script>
+
+<script src="<c:url value='/static/lib/angular-super-gallery.js' />"></script>
 <script src="<c:url value='/static/app/directives/dirPagination.js' />"></script>
 
 <%-- <script src="<c:url value='/static/lib/wow.min.js' />"></script> --%>

@@ -20,8 +20,19 @@
 				         extra-settings="selected_baseline_settings"
 				         translation-texts="selected_baselines_customTexts"></div> -->
 					<br><br>
-                    <textarea name="body" placeholder="Post Body" ng-model="pCtrl.post.fullText" class="form-control"></textarea>
+                    <!-- <textarea name="body" placeholder="Post Body" ng-model="pCtrl.post.fullText" class="form-control"></textarea> -->
+                    
+                    <textarea name="editor1" class="content-box"
+					        ng-model="pCtrl.post.fullText"
+					        markdown-editor="{'iconlibrary': 'fa', addExtraButtons: true, resize: 'vertical'}"
+					        on-fullscreen="onFullScreenCallback()"
+					        on-fullscreen-exit="onFullScreenExitCallback()"
+					        rows="10" >
+					</textarea>
+					
+                    <div marked="editor1" class="markdown" style="padding: 20px"></div>
                     <br><br>
+                    <!-- <md ng-model="pCtrl.post.fullText"></md> -->
                     <!-- <input type="submit" value="Post"> -->
                     <button type="submit" class="btn btn-success" ng-click="submitPost()">Post</button>
                 </form>
