@@ -39,6 +39,10 @@
 						panel: "thumbnail"
 					}
 				},
+				autoplay: {
+			        enabled: true, // slideshow play enabled/disabled
+			        delay: 4100 // autoplay delay in millisecond
+			    },
 				theme: 'darkblue',
 				thumbnail: {
 					height: 50,

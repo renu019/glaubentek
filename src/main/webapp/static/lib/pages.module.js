@@ -6,7 +6,6 @@
   /** @ngInject */
   function routeConfig($urlRouterProvider, $httpProvider, $stateProvider) {
 	  
-	  	
 	  $urlRouterProvider.when('', '/home');
 	  	
 	  new WOW().init();

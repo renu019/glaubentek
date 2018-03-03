@@ -121,7 +121,7 @@
     </div> -->
   
 
-      <div ui-view ></div>
+      <div ui-view autoscroll-body-top></div>
   
   <page-footer></page-footer>
   
@@ -165,6 +165,7 @@
 <%-- <script src="<c:url value='/static/lib/main.js' />"></script> --%>
 
 <script src="<c:url value='/static/lib/app.js' />"></script>
+<script src="<c:url value='/static/lib/pages.run.js' />"></script>
 <script src="<c:url value='/static/lib/pages.module.js' />"></script>
 <script src="<c:url value='/static/app/directives/pageHeader.directive.js' />"></script>
 <script src="<c:url value='/static/app/directives/pageFooter.directive.js' />"></script>
