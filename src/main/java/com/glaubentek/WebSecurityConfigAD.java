@@ -52,14 +52,14 @@ public class WebSecurityConfigAD extends WebSecurityConfigurerAdapter {
 	      .authorizeRequests()
 	      .antMatchers("/createPost/**", "/editPost/**", "/listAllPosts/**", "/post/**", "/deletePost/**", "/allUsers/**", "/user/**", 
 	    		  		"/listAllUsers/**", "/editUser/**", "/createUser/**", "/deleteUser/**", "/tenderAlert/**").access("hasRole('ADMIN')")
-          .antMatchers("/", "/home/**", "/aboutus/**", "/services/**", "/portfolio/**", "/blog/**", "/blogItem/**", "/sikariaHome/**", "/contactus/**",
+          .antMatchers("/", "/admin/", "/home/**", "/aboutus/**", "/services/**", "/portfolio/**", "/blog/**", "/blogItem/**", "/sikariaHome/**", "/contactus/**",
         		  		"/allPosts/**","/the_post/**","/postByMonth/**","/recentPosts/**", "/tagAndCount/**", "/sendMail/**", "/sendMailSikaria/**",
         		  		"/getUsername/**", "/userRole/**",
         		  		"/resources/**", "/static/**").permitAll()
           .anyRequest().authenticated()
           .and()
       .formLogin()
-          .loginPage("/login")
+          .loginPage("/login").defaultSuccessUrl("/admin")
           .permitAll()
           .and()
       .logout()

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<include resource="org/springframework/boot/logging/logback/base.xml"/>
+	<property name="DEV_HOME" value="logging"/>
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+
+			<Pattern>
+				%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
+			</Pattern>
+
+		</layout>
+	</appender>
+
+	 <appender name="INFOFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${DEV_HOME}/glaubentek_info.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover. Make sure the path matches the one in the file element or else
+             the rollover logs are placed in the working directory. -->
+            <fileNamePattern>${DEV_HOME}/archived/glaubentek_info.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>5MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <!-- keep 30 days' worth of history -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+    <appender name="ERRORFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${DEV_HOME}/glaubentek_error.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover. Make sure the path matches the one in the file element or else
+             the rollover logs are placed in the working directory. -->
+            <fileNamePattern>${DEV_HOME}/archived/glaubentek_error.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>5MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <!-- keep 30 days' worth of history -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+	<logger name="logging.level.org.springframework.security" level="INFO" additivity="false">
+		<appender-ref ref="STDOUT" />
+	</logger>
+
+	<logger name="org.hibernate" level="ERROR" additivity="false">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="ERRORFILE"/>
+	</logger>
+
+	<logger name="com.glaubentek" level="INFO" additivity="false">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="INFOFILE"/>
+	</logger>
+	
+	<!-- <logger name="com.glaubentek" level="ERROR" additivity="false">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="ERRORFILE"/>
+	</logger> -->
+	
+	<root level="INFO">
+		<!-- <appender-ref ref="STDOUT" /> -->
+		<appender-ref ref="INFOFILE"/>
+	</root>
+	
+	<!-- <root level="ERROR">
+        <appender-ref ref="ERRORFILE"/>
+        <appender-ref ref="STDOUT" />
+    </root> -->
+
+</configuration>

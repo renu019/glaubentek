@@ -30,10 +30,11 @@
 	<link href="<c:url value='/static/css/bootstrap-markdown.min.css' />" rel="stylesheet" />
 	<link href="<c:url value='/static/css/github.min.css' />" rel="stylesheet" />
 	<link href="<c:url value='/static/css/angular-markdown-editor.css' />" rel="stylesheet" />
+	<%-- <link href="<c:url value='/static/css/ticker.css' />" rel="stylesheet" /> --%>
 	<link href="<c:url value='/static/css/main.css' />" rel="stylesheet" />
 
 </head>
-<body ng-controller="pageHeaderCtrl as pHCtrl">
+<body>
 <div></div>
 
 <main>
@@ -94,7 +95,7 @@
 			            <li><a href="#/sikariaHome">SikariaHome</a></li>
 			            <li><a href="#/contactus">Contact</a></li>
 			            
-			            <li ng-if="showMenu()"><a href="#/listAllPosts">Manage Blog</a></li>
+			            <%-- <li ng-if="showMenu()"><a href="#/listAllPosts">Manage Blog</a></li>
 			            <li ng-if="showMenu()"><a href="#/tenderAlert">Tender Notifications</a></li>
 			            <li ng-if="showMenu()"><a href="#/listAllUsers">Manage Users</a></li>
 			            
@@ -102,7 +103,7 @@
 						</li>
 						<form id="logout" action="logout" method="post" >
 			  						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-						</form>
+						</form> --%>
                         
                     </ul>
                 </div>

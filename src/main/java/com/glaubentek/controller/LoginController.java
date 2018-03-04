@@ -15,33 +15,33 @@ public class LoginController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String pageEntry(Model model) {
-		System.out.println("inside pageEntry");
+		logger.info("inside pageEntry");
 		return "index";
 	}
 	
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public String adminEntry(Model model) {
-		System.out.println("inside adminEntry");
+		logger.info("inside adminEntry");
 		return "adminIndex";
 	}
 	
 	/*@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String globalEntry(Model model) {
-		System.out.println("inside globalEntry");
+		logger.info("inside globalEntry");
 		return "index";
 	}*/
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String formLogin(Model model, @RequestParam(value = "error",required = false) String error, @RequestParam(value = "logout",required = false) String logout) {
-		System.out.println("inside login  ::  ");
+		logger.info("inside login  ::  ");
 
 		if (error != null) {
-			System.out.println("login error  ::  "+error);
+			logger.info("login error  ::  "+error);
 			model.addAttribute("error", "Invalid Credentials provided");
 		}
 
 		if (logout != null) {
-			System.out.println("login error  ::  "+logout);
+			logger.info("login error  ::  "+logout);
 			model.addAttribute("logoutMsg", "Logged out Successfully");
 		}
 
@@ -50,10 +50,10 @@ public class LoginController {
 
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String formLogout(Model model) {
-		System.out.println("inside logout  ::  ");
+		logger.info("inside logout  ::  ");
 
 		/*if (logout != null) {
-			System.out.println("login error  ::  "+logout);
+			logger.info("login error  ::  "+logout);
 			model.addAttribute("logoutMsg", "Logged out Successfully");
 		}*/
 

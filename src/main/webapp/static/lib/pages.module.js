@@ -44,7 +44,7 @@
 	    
 	    $stateProvider
 	    .state('blogItem', {
-	      url: '/blogItem',
+	      url: '/blogItem/:postId',
 	      params: {'postId': null},
 	      templateUrl: 'static/pages/blogItem.html',
 	      controller: 'blogCtrl'
