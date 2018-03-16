@@ -2,6 +2,9 @@ package com.glaubentek.controller;
 
 import java.util.Collection;
 import java.util.Date;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -20,17 +23,19 @@ import com.glaubentek.service.UserService;
 
 @RestController
 public class UserController {
-
+	private final Logger logger = LoggerFactory.getLogger(UserController.class);
 	@Autowired
     private UserService userService;
 
 	@GetMapping(value="/allUsers/{pageNo}")
     public Page<User> getAllPosts(@PathVariable("pageNo") int pageNo){
+		logger.info("UserController :: getAllPosts  ::  ");
         return userService.getAllUsers(pageNo - 1, 10);
     }
 	
 	@GetMapping(value="/user/{id}")
     public User getUserById(@PathVariable Long id){
+		logger.info("UserController :: getUserById  ::  ");
 		User user = userService.getUserById(id);
 		//EncryptDecryptUtil.decode(user.getPassword());
         return user;
@@ -38,7 +43,7 @@ public class UserController {
 	
 	@PostMapping(value="/createUser")
     public ResponseEntity<Void> createUser(@RequestBody User user){
-		System.out.println("user  ::  "+user);
+		logger.info("UserController :: createUser  ::  ");
         if(user.getDateCreated() == null)
             user.setDateCreated(new Date());
         userService.save(user);
@@ -47,16 +52,17 @@ public class UserController {
 	
     @GetMapping(value ="/getUsername")
     public String getUsername(){
+    	logger.info("UserController :: getUsername  ::  ");
         return SecurityContextHolder.getContext().getAuthentication().getName();
     }
     
     @GetMapping(value ="/userRole")
     public User getUserRole(){
-    	
+    	logger.info("UserController :: getUserRole  ::  ");
     	Collection<? extends GrantedAuthority> authorityList = SecurityContextHolder.getContext().getAuthentication().getAuthorities();
     	String userRole = "";
     	for(GrantedAuthority grantedAuthority : authorityList) {
-    		System.out.println("grantedAuthority  ::  "+grantedAuthority);
+    		//System.out.println("grantedAuthority  ::  "+grantedAuthority);
     		userRole = grantedAuthority.toString();
     	}
     	User user = new User();
@@ -66,7 +72,8 @@ public class UserController {
 
     @DeleteMapping(value = "/deleteUser/{userId}")
     public ResponseEntity<Void> deletePost(@PathVariable Long userId){
-    	System.out.println("userId  ::  "+userId);
+    	//System.out.println("userId  ::  "+userId);
+    	logger.info("UserController :: deletePost  ::  ");
     	userService.deleteUser(userId);
         return new ResponseEntity<Void>(HttpStatus.OK);
     }

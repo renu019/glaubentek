@@ -1,109 +1,222 @@
 <div ng-include="'static/pages/headers/sikariaPageHeader.html'"></div>
 
-<div class="container">
-
-	<div class="row">
-
-		<div class="col-md-6">
-
-			<!-- DEMO BEGIN -->
-			<div class="panel panel-default">
-
-				<div class="panel-heading">
-					<strong>multiple images</strong> | thumbnails | modal + controls
-				</div>
-
-				<div class="panel-body asg-custom">
-
-					<pre data-ng-if="showOptions1">{{ sCtrl.options1|json}}</pre>
-
-					<!-- ASG BEGIN -->
-					<asg-image data-id="nature" data-options="sCtrl.options1" data-items="sCtrl.files1">
-						<asg-modal>
-							<asg-thumbnail></asg-thumbnail>
-						</asg-modal>
-					</asg-image>
-					<asg-thumbnail data-id="nature"></asg-thumbnail>
-					<hr>
-					<!-- <strong>custom panel</strong> | auto select the image when mouseover
-					<asg-panel data-id="nature" class="custom-panel" data-options="sCtrl.options1" data-items="sCtrl.files1"></asg-panel> -->
-					<!-- ASG END -->
-
-				</div>
-
-			</div>
-			<!-- DEMO END -->
-
-		</div>
-
-		<div class="col-md-6">
-
-		</div>
-
-	</div>
-
-</div>
 
 <!--What we offer start-->
 <section>
 	<div class=" what-offer-widget">
 		<div class="container">
-			<h2 class="text-center" style="padding-bottom: 20px">What We
-				Offer?</h2>
-
-			<div class="gallery-bott">
+			<h2 class="text-center" style="padding-bottom: 20px">What We Offer?</h2>
+			<div class="gallery-bott">			
 				<div class="porto-top">
-
-					<p>Sikaria is a Residential cum Commercial Building completed
-						in the year 2017. It is on road and is located in Karamtoli Road,
-						Near SN Yadav Alley (Beside Celebrations), Ranchi, Jharkhand. The
-						Building is 'B+G+6' (Basement + Ground Floor + 6 Floors). Ground,
-						First and Second Floors are Commercial spaces amounting to a total
-						area of about 19500 sqft.</p>
+					<h2 style=" font-size: 25px;color: #a0431b;padding-bottom: 15px">Sikaria Homes &#8208; 1st Unit &#8208; 10 Rooms</h2>
+					<p style="text-align: justify">
+					Sikaria Homes is a combination of Two (2) Units wherein 1st Unit consists of Ten (10) Bedrooms
+					 connected with each other through five (5) Large Drawing & Dining Rooms, two (2) Kitchens, five (5)
+					  Balconies and eight
+					 (8) Bathrooms (Either attached or just outside the rooms for exclusive use)</p>
 				</div>
-
+			<!-- start row-->	
 				<div class="col-md-4 col1 gallery-grid">
-					<a href="#" rel="title"
-						class="b-link-stripe b-animate-go  thickbox">
-						<figure class="effect-bubba">
-							<img class="img-responsive" src="static/images/g3.jpg" alt="">
-							<figcaption>
-								<h4 class="gal">501</h4>
+						
+			<figure class="effect-bubba">
+				<div class="panel-body asg-custom">
+					<pre data-ng-if="showOptions">{{ sCtrl.options|json}}</pre>					
+					<asg-image data-id="nature" data-options="sCtrl.options1" data-items="sCtrl.files1">						
+					<asg-modal>							
+						</asg-modal>
+					</asg-image>
+					<figcaption>					
+								<h4 class="gal">Room No. 501NW</h4>
 								<p class="gal1">
-									Balcony- Yes.<br />Attached washroom-Yes <br />King Sized
-									Bedroom <br />Private Room
+									2 Single Beds.<br />Two (2) Persons <br />Attached Bathroom <br />
 								</p>
 							</figcaption>
+							</div>
 						</figure>
-					</a>
+											
+			<!-- DEMO END -->
+				
 				</div>
 				<div class="col-md-4 col1 gallery-grid">
-					<a href="#" rel="title"
-						class="b-link-stripe b-animate-go  thickbox">
-						<figure class="effect-bubba">
-							<img class="img-responsive" src="static/images/g4.jpg" alt="">
-							<figcaption>
-								<h4 class="gal">502</h4>
-								<p class="gal1">Eastern India’s one of the best Gym –
-									‘Spartan’ is present on the 2nd Floor.</p>
+						
+			<figure class="effect-bubba">
+				<div class="panel-body asg-custom">
+					<pre data-ng-if="showOptions">{{ sCtrl.options|json}}</pre>					
+					<asg-image data-id="nature1" data-options="sCtrl.options2" data-items="sCtrl.files2">						
+					</asg-image>
+					<figcaption>
+				
+								<h4 class="gal">Room No. 502NW</h4>
+								<p class="gal1">
+								
+									1 King Size Bed.<br />Two (2) Persons <br />Bathroom outside the Room <br />
+								</p>
 							</figcaption>
+							</div>
 						</figure>
-					</a>
+											
+			
 				</div>
+			
 				<div class="col-md-4 col1 gallery-grid">
-					<a href="#" rel="title"
-						class="b-link-stripe b-animate-go  thickbox">
-						<figure class="effect-bubba">
-							<img class="img-responsive" src="static/images/g3.jpg" alt="">
-							<figcaption>
-								<h4 class="gal">Upvan</h4>
-								<p class="gal1">The building houses a high quality
-									multi-cuisine restaurant named ‘Upvan’ on the Ground Floor</p>
+					<figure class="effect-bubba">
+				<div class="panel-body asg-custom">
+					<pre data-ng-if="showOptions">{{ sCtrl.options|json}}</pre>					
+					<asg-image data-id="nature2" data-options="sCtrl.options3" data-items="sCtrl.files3">						
+					</asg-image>
+					<figcaption>
+					<h4 class="gal">Room No. 503NW</h4>
+								<p class="gal1">						
+									1 Double Bed.<br />Two (2) Persons <br />Attached Bathroom, Attached Balcony <br />
+								</p>
 							</figcaption>
+							</div>
 						</figure>
-					</a>
+				</div>
+				
+				<!-- End row-->	
+				<div class="clearfix"></div>
+
+				<!-- start row-->				
+				<div class="col-md-4 col1 gallery-grid">
+					<figure class="effect-bubba">
+				<div class="panel-body asg-custom">
+					<pre data-ng-if="showOptions">{{ sCtrl.options4|json}}</pre>					
+					<asg-image data-id="nature3" data-options="sCtrl.options4" data-items="sCtrl.files4">						
+					</asg-image>
+					<figcaption>
+					<h4 class="gal">Room No. 501SW</h4>
+								<p class="gal1">						
+									1 King Size Bed<br />Two (2) Persons <br />Bathroom outside the Room <br />
+								</p>
+							</figcaption>
+							</div>
+						</figure>
+				</div>
+				
+				<div class="col-md-4 col1 gallery-grid">
+				<figure class="effect-bubba">
+				<div class="panel-body asg-custom">
+					<pre data-ng-if="showOptions">{{ sCtrl.options4|json}}</pre>					
+					<asg-image data-id="nature4" data-options="sCtrl.options5" data-items="sCtrl.files5">						
+					</asg-image>
+					<figcaption>
+						<h4 class="gal">Room No. 502SW</h4>
+								<p class="gal1">						
+									1 King Size Bed.<br />Two (2) Persons <br />Bathroom outside the Room, Attached Balcony <br />
+								</p>
+							</figcaption>
+							</div>
+						</figure>
+				</div>
+				
+				
+				<div class="col-md-4 col1 gallery-grid">
+					<figure class="effect-bubba">
+				<div class="panel-body asg-custom">
+					<pre data-ng-if="showOptions">{{ sCtrl.options4|json}}</pre>					
+					<asg-image data-id="nature5" data-options="sCtrl.options6" data-items="sCtrl.files6">						
+					</asg-image>
+					<figcaption>
+						<h4 class="gal">Room No. 503SW</h4>
+								<p class="gal1">						
+									1 King Size Bed.<br />Two (2) Persons <br />Bathroom outside the Room, Attached Balcony <br />
+								</p>
+								
+							</figcaption>
+							</div>
+						</figure>
+				</div>
+				<!-- End row-->
+				
+				<div class="clearfix"></div>
+				<!-- Start row-->
+				
+				
+				<div class="col-md-4 col1 gallery-grid">
+					<figure class="effect-bubba">
+				<div class="panel-body asg-custom">
+					<pre data-ng-if="showOptions">{{ sCtrl.options4|json}}</pre>					
+					<asg-image data-id="nature6" data-options="sCtrl.options7" data-items="sCtrl.files7">						
+					</asg-image>
+					<figcaption>
+						<h4 class="gal">Room No. 504SW</h4>
+								<p class="gal1">						
+									2 King Size Beds.<br />Four (4) Persons <br />Attached Bathroom, Attached Balcony <br />
+								</p>
+								
+							</figcaption>
+							</div>
+						</figure>
+				</div>
+				
+				
+				<div class="col-md-4 col1 gallery-grid">
+					<figure class="effect-bubba">
+				<div class="panel-body asg-custom">
+					<pre data-ng-if="showOptions">{{ sCtrl.options4|json}}</pre>					
+					<asg-image data-id="nature7" data-options="sCtrl.options8" data-items="sCtrl.files8">						
+					</asg-image>
+					<figcaption>
+						<h4 class="gal">Room No. 501SE</h4>
+								<p class="gal1">						
+									1 King Size Bed.<br />Two (2) Persons <br />Attached Bathroom <br />
+								</p>
+							</figcaption>
+							</div>
+						</figure>
+				</div>
+				
+				<div class="col-md-4 col1 gallery-grid">
+					<figure class="effect-bubba">
+				<div class="panel-body asg-custom">
+					<pre data-ng-if="showOptions">{{ sCtrl.options4|json}}</pre>					
+					<asg-image data-id="nature8" data-options="sCtrl.options9" data-items="sCtrl.files9">						
+					</asg-image>
+					<figcaption>
+						<h4 class="gal">Room No. 502SE</h4>
+								<p class="gal1">						
+									1 King Size Bed.<br />Two (2) Persons <br />Bathroom outside the Room <br />
+								</p>
+				
+							</figcaption>
+							</div>
+						</figure>
+				</div>
+				<!-- end row-->
+				
+				<div class="clearfix"></div>
+				
+				<!-- start row-->
+				
+				<div class="col-md-4 col1 gallery-grid">
+					<figure class="effect-bubba">
+				<div class="panel-body asg-custom">
+					<pre data-ng-if="showOptions">{{ sCtrl.options|json}}</pre>					
+					<asg-image data-id="nature9" data-options="sCtrl.options10" data-items="sCtrl.files10">						
+					</asg-image>
+					<figcaption>
+						<h4 class="gal">Room No. 503SE</h4>
+								<p class="gal1">						
+									1 King Size Bed.<br />Two (2) Persons <br />Bathroom outside the Room <br />
+								</p>
+							</figcaption>
+							</div>
+						</figure>
 				</div>
 				<div class="clearfix"></div>
+				
+				<!-- start of another Unit-->
+				<!--wILL UNCOMMENT IT ONCE will get the pics-->
+				<!--Sikaria 2nd unit start-->
+				<!-- <div class="porto-top" style="margin-top: 1.5em;">
+                    <h2  style="font-size: 25px;color: #a0431b;padding-bottom: 15px"> Sikaria Homes 2nd Unit &#8208; 3 Rooms</h2>
+                    <p>
+                        The 2nd Unit is a separate flat/ guesthouse consisting of Three (3) Bedrooms connected to each other via two (2) Large Dining & Drawing Rooms, 
+                        one (1) Kitchen, three (3) Balconies and three (3) Bathrooms. 
+                    </p>
+                </div>
+				
 
 				<div class="col-md-4 col1 gallery-grid">
 					<a href="#" rel="title"
@@ -143,50 +256,8 @@
 							</figcaption>
 						</figure>
 					</a>
-				</div>
-				<div class="clearfix"></div>
-
-				<div class="clearfix"></div>
-
-				<div class="col-md-4 col1 gallery-grid">
-					<a href="#" rel="title"
-						class="b-link-stripe b-animate-go  thickbox">
-						<figure class="effect-bubba">
-							<img class="img-responsive" src="static/images/g6.jpg" alt="">
-							<figcaption>
-								<h4 class="gal">3rd Floor Flat</h4>
-								<p class="gal1">parking as well as outside parking for
-									visiting guests or customers.</p>
-							</figcaption>
-						</figure>
-					</a>
-				</div>
-				<div class="col-md-4 col1 gallery-grid">
-					<a href="#" rel="title"
-						class="b-link-stripe b-animate-go  thickbox">
-						<figure class="effect-bubba">
-							<img class="img-responsive" src="static/images/g5.jpg" alt="">
-							<figcaption>
-								<h4 class="gal">4th Floor Flat</h4>
-								<p class="gal1">parking as well as outside parking for
-									visiting guests or customers.</p>
-							</figcaption>
-						</figure>
-					</a>
-				</div>
-				<div class="col-md-4 col1 gallery-grid">
-					<a href="#" rel="title"
-						class="b-link-stripe b-animate-go  thickbox">
-						<figure class="effect-bubba">
-							<img class="img-responsive" src="static/images/g6.jpg" alt="">
-							<figcaption>
-								<h4 class="gal">5th Floor Flat</h4>
-								<p class="gal1">parking as well as outside parking for
-									visiting guests or customers.</p>
-							</figcaption>
-						</figure>
-					</a>
-				</div>
+				</div> -->
+				<!--Sikaria 2nd unit end-->
 
 			</div>
 
@@ -197,131 +268,196 @@
 </section>
 <!--What we offer end-->
 
-
-
-<!--ombuid tech starts plugins start-->
 <section class="wprt-section">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6">
-				<div class="wprt-spacer" data-desktop="70" data-mobi="60"
-					data-smobi="60"></div>
+    <div class="container" style="font-family: 'Open Sans', sans-serif;">
+        <div class="row" style="margin-bottom: 30px;margin-top: 20px ">
+            <div class="col-md-6">
+                <div class="wprt-spacer" data-desktop="70" data-mobi="60" data-smobi="60"></div>
+                <h2 style="margin-bottom: 10px;color:#a0431b;">About Sikaria Home</h2>
+                <div  style="margin-bottom: 20px" class="wprt-lines style-1 custom-3">
+                    <!-- <div class="line-1"></div>
+                    <div class="line-2"></div> -->
+                </div>
+                <div class="wprt-spacer" data-desktop="50" data-mobi="40" data-smobi="40"></div>
+                <uib-accordion close-others="true">
+			    <uib-accordion-group heading="Space Accessible by Guests" is-open="status.open1" panel-class="panel-warning">
+			    <uib-accordion-heading>
+			        <i class="pull-left glyphicon" ng-class="{'glyphicon-minus': status.open1, 'glyphicon-plus': !status.open1}"></i>  Space Accessible by Guests <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open1, 'glyphicon-chevron-right': !status.open1}"></i>
+			    </uib-accordion-heading>
+			<span style="font-size: 15px;font-family: 'Open Sans', sans-serif;">     	In case, entire 1st or 2nd unit is booked by the guest, they will have unrestricted access to the entire space (Guesthouse Key will be provided to the Guests)<br/><br/>
+In case, individual room/s are booked, Guests will be free to access their respective rooms along with Common spaces i.e. Kitchen, Common Balconies, Dining & Drawing Rooms.<br/>
+Check-in Time: Flexible, Check-out Time: 12 PM (noon)</span> 
 
-				<div class="wprt-spacer" data-desktop="50" data-mobi="40"
-					data-smobi="40"></div>
-				<div class="wprt-toggle style-1">
-					<h3 class="toggle-title">Guest Access</h3>
-					<div class="toggle-content Sikaria_p">
-						<p>
-							Entire Home, 16 plus guests, 9 bedrooms, 9 beds<br /> Entire
-							Listed Place can be used by the visiting Guests including nine
-							(9) large rooms, two (2) big Drawing & Dining Space, four (4)
-							Balconies and two (2) Kitchens<br /> 1 night to 31 nights stay
-							range<br /> Check-in time Flexible and Checkout time 12 PM
-							(noon)
+			    </uib-accordion-group>
+			    <uib-accordion-group ng-init="status.open2=true" is-open="status.open2" panel-class="panel-warning">
+			    <uib-accordion-heading>
+			        <i class="pull-left glyphicon" ng-class="{'glyphicon-minus': status.open2, 'glyphicon-plus': !status.open2}"></i>  Amenties <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open2, 'glyphicon-chevron-right': !status.open2}"></i>
+			    </uib-accordion-heading>
+			      	<table class="table table-bordered">
+  
+    <tbody style="font-size: 14px;
+    text-align: center;
+    padding: 0px 4px;
+    line-height: 20px!important;
+    font-family: 'Open Sans', sans-serif;">
+      <tr>
+        <td>Comfortable Beds</td>
+        <td>Wardrobes & Drawers</td>
+        <td>Hangers</td>
+         <td>Dressing cum Study Table</td>
+      </tr>
+      <tr>
+        <td>Bed Linens</td>
+        <td>Pillows</td>
+        <td>Comforter/Blanket</td>
+         <td>Comforter/Blanket</td>
+         
+      </tr>
+      <tr>
+        <td>Dining Tables</td>
+        <td>Sofa</td>
+        <td>Chairs & Centre Table</td>
+        <td>Kitchen</td>
+      </tr>
+      <tr>
+      <td>Geyser</td>
+        <td>Laptop friendly Workspace</td>
+        <td>Single Level Home</td>
+        <td>Elevator (of the Apartment</td>
+        
+      </tr>
+    </tbody>
+  </table>
+			    </uib-accordion-group>
+			    <uib-accordion-group is-open="status.open3" panel-class="panel-warning">
+			    <uib-accordion-heading>
+			        <i class="pull-left glyphicon" ng-class="{'glyphicon-minus': status.open3, 'glyphicon-plus': !status.open3}"></i>  Pricing <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open3, 'glyphicon-chevron-right': !status.open3}"></i>
+			    </uib-accordion-heading>
+			      <span style="font-size: 15px; font-family: 'Open Sans', sans-serif;"> 
+								Rates per night:<br/>
+								501NW &#8208; Rs.990/- , &#8202
+								 502NW &#8208; Rs.990/- , &#8202
+								503NW &#8208; Rs.990/-<br/>
+								504SW &#8208; Rs.990/- , &#8202
+								505SW &#8208; Rs.990/- , &#8202
+								506SW &#8208; Rs.990/-<br/>
+								507SW &#8208; Rs.1890/- , &#8202
+								508SE &#8208; Rs.990/- , &#8202
+								509SE &#8208; Rs.990/- , &#8202
+								510SE &#8208; Rs.990/-<br/><br/>
+								<b>Plus Security Deposit of Rs.1000/- per room*</b><br/><br/>
+								<b>Entire 1st Unit: Rs.10,800/- (Security Deposit Rs.10,000/-)* </b><br/>
+								401NE &#8208; Rs.999/- , &#8202
+								402NE &#8208; Rs.999/- , &#8202
+								403NE &#8208; Rs.999/-<br/><br/>
+								<b>Entire 2nd Unit: Rs.2997/- (Security Deposit Rs.5500/-)*</b><br/>
+								
+								Rs.350/- per Extra Guest<br/>
+								*May vary in accordance with the duration of stay
 
-						</p>
-					</div>
-				</div>
-				<div class="wprt-toggle active style-1">
-					<h3 class="toggle-title">The Space</h3>
-					<div class="toggle-content Sikaria_p">
-						<p>
-							Accommodates: 2<br /> Bathrooms: 1<br /> Bedrooms: 1<br />
-							Beds: 1 Double Bed<br /> Property type: Guesthouse<br /> Room
-							type: Private Room<br />
 
-						</p>
-					</div>
-				</div>
-				<div class="wprt-toggle style-1">
-					<h3 class="toggle-title">Amenities</h3>
-					<div class="toggle-content Sikaria_p">
-						<p>
-							Kitchen, TV, Essentials, Shampoo,Study Table,Bed Linens, Extra
-							Pillows and Blankets, Refrigerator,<br /> Elevator, Free Parking
-							on Premises, Hangers, Laptop friendly workspace, Private
-							Entrance, Single Level Home<br /> 2 Home Safety Amenities:
-							First-aid kit and Fire Extinguisher
-						</p>
-
-					</div>
-				</div>
-
-				<div class="wprt-toggle style-1">
-					<h3 class="toggle-title">House Rules</h3>
-					<div class="toggle-content Sikaria_p">
-						<p>
-							No smoking, Not suitable for pets, No parties or events, Not safe
+			    </uib-accordion-group></span>
+			    <uib-accordion-group is-open="status.open4" panel-class="panel-warning">
+			      <uib-accordion-heading>
+			       <i class="pull-left glyphicon" ng-class="{'glyphicon-minus': status.open4, 'glyphicon-plus': !status.open4}"></i>  House Rules <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open4, 'glyphicon-chevron-right': !status.open4}"></i>
+			      </uib-accordion-heading>
+			      	<span style="font-size: 15px;font-family: 'Open Sans', sans-serif;"> 
+			      	 No smoking, Not suitable for pets, No parties or events, Not safe
 							or suitable for infants (Under 2 years), Check in time is
-							flexible. <br />Must keep noise to an optimum level, so as not
+							flexible. <br /><br />Must keep noise to an optimum level, so as not
 							to disturb the neighbours. Also, if carrying children (2-14
 							years); instruct them or make sure that they use the Elevator
-							judiciously or only when needed. <br />
+							judiciously or only when needed. <br /><br />
 							<b> Children above the age of 2 years will be counted as
 								Extra Guests</b> </b>
-					</div>
-				</div>
-
-				<div class="wprt-toggle style-1">
-					<h3 class="toggle-title">Pricing</h3>
-					<div class="toggle-content Sikaria_p">
-						<p>Minimum Price Rs.7400 per day to Maximum Rs.21000 per day
-							Cleaning Fee None and Security Deposit Rs.10000 per reservation</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="wprt-spacer" data-desktop="70" data-mobi="60"
-					data-smobi="60"></div>
-				<h2 style="color: white;">ABOUT SIKARIA HOMES</h2>
-
-				<div class="wprt-spacer" data-desktop="50" data-mobi="40"
-					data-smobi="40"></div>
-				<div class="wprt-galleries galleries w-570px" data-width="135"
-					data-margin="10">
-					<div id="wprt-slider" class="flexslider">
-						<ul class="slides">
-							<li class="flex-active-slide"><img
-								src="static/images/gg3.jpg" alt="image" /></li>
-							<li class="flex-active-slide"><img
-								src="static/images/gg3.jpg" alt="image" /></li>
-							<li class="flex-active-slide"><img
-								src="static/images/gg1.jpg" alt="image" /></li>
-							<li class="flex-active-slide"><img
-								src="static/images/gg8.jpg" alt="image" /></li>
-
-						</ul>
-					</div>
-					<div id="wprt-carousel" class="flexslider">
-						<ul class="slides">
-							<li><img src="static/images/gg1-s.jpg" alt="image"></li>
-							<li><img src="static/images/gg3-s.jpg" alt="image"></li>
-							<li><img src="static/images/gg2-s.jpg" alt="image"></li>
-							<li><img src="static/images/gg8-s.jpg" alt="image"></li>
-
-						</ul>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-12">
-				<div class="wprt-spacer" data-desktop="70" data-mobi="60"
-					data-smobi="60"></div>
-			</div>
-			<!-- /.col-md-12 -->
-		</div>
-		<!-- /.row -->
-	</div>
-	<!-- /.container -->
+                     </span>
+			    </uib-accordion-group>
+			  </uib-accordion>
+            </div><!-- /.col-md-6 -->
+            <div class="col-md-6">
+                <div class="wprt-spacer" data-desktop="70" data-mobi="60" data-smobi="60"></div>
+                <h2 style="margin-bottom: 10px;color:white">ABOUT US</h2>
+                <div style="margin-bottom: 20px;color:white" class="wprt-lines style-1 custom-3">
+                    <!-- <div class="line-1"></div>
+                    <div class="line-2"></div> -->
+                </div>
+                <div class="wprt-spacer" data-desktop="50" data-mobi="40" data-smobi="40"></div>
+                <div class="wprt-galleries galleries w-570px" data-width="135" data-margin="10">
+                    <div id="wprt-slider" class="flexslider">
+                        <div uib-carousel interval="3000"  active="active">
+				            <div uib-slide index="0">
+				               <img ng-src="static/images/sikaria_3.jpg" />
+				                <div class="carousel-caption">
+				                    <p>
+				                    <p/>
+				                </div>
+				            </div>
+				            <div uib-slide index="1">
+				             
+				                <img ng-src="static/images/Sikaria_CommonKitchen.jpg" />
+				                <div class="carousel-caption">
+				                    <p>
+				                    </p>
+				                </div>
+				            </div>
+				            <div uib-slide index="2">
+				                <img ng-src="static/images/sikaria_4.jpg" />
+				                <div class="carousel-caption">
+				                    <p>
+				                    </p>
+				                </div>
+				            </div>
+				            <div uib-slide index="3">
+				             <img ng-src="static/images/sikaria_1.jpg">
+				               
+				                <div class="carousel-caption">
+				                    <p>
+				                    </p>
+				                </div>
+				            </div>
+				             <div uib-slide index="4">
+				                <img ng-src="static/images/sikaria_5.jpg" />
+				                <div class="carousel-caption">
+				                    <p>
+				                    </p>
+				                </div>
+				            </div>
+				            <div uib-slide index="5">
+				                <img ng-src="static/images/Sikaria_CommonDiningTable.jpg" />
+				                <div class="carousel-caption">
+				                    <p>
+				                    </p>
+				                </div>
+				            </div>
+				             <div uib-slide index="6">
+				                <img ng-src="static/images/sikaria_6.jpg" />
+				                <div class="carousel-caption">
+				                    <p>
+				                    </p>
+				                </div>
+				            </div>
+				            <div uib-slide index="7">
+				                <img ng-src="static/images/sikaria_2.jpg" />
+				                <div class="carousel-caption">
+				                    <p>
+				                    </p>
+				                </div>
+				            </div>
+				    </div>
+                    </div>
+                   
+                </div>
+            </div>
+        <!-- /.col-md-6 -->
+            <div class="col-md-12">
+                <div class="wprt-spacer" data-desktop="70" data-mobi="60" data-smobi="60"></div>
+            </div><!-- /.col-md-12 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
 </section>
-<!--ombuid tech starts plugins ends-->
-
 
 <div class="container">
-
 	<div class="contact-main w3l-co">
-
 		<div class="col-md-6 contact-left">
 			<div class="contact-top">
 				<h2>GETTING AROUND</h2>
@@ -332,72 +468,40 @@
 					Ground & Football Stadium is 1 Km.<br /> Distance from Governor
 					House,CCL&SBI Main Branch is 1.5 Km<br /> Distance from Firayalal
 					Chowk is 1.5 Kms.<br /> Distance from Lalpur Chowk is 2 Kms.<br />
-
 				</p>
 				<div class="map agileits-mp">
 					<iframe
 						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7324.296010668257!2d85.32516133171869!3d23.38286240863558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f4e16b3d5a02ed%3A0xd513d8841a4db419!2sGlaubentek+Buildeco+Pvt+Ltd!5e0!3m2!1sen!2sin!4v1512905042455"
-						frameborder="0" style="border: 0"></iframe>
-
-
-				</div>
-
+						frameborder="0" style="border: 0">
+						</iframe>
 			</div>
-
 		</div>
-
-		<div class="col-md-6 contact-right w3agile-co">
+		</div>
+	<div class="col-md-6 contact-right w3agile-co">
 			<div class="contact-top" style="margin-bottom: 2em !important">
 				<h3>CONTACT US FOR BOOKING</h3>
-				<p>We will contact you back</p>
+				<!-- <p>We will contact you back</p> -->
 			</div>
-			
-			
-			<div class="contact-top" style="margin-bottom: 2em !important">
-				<h3>{{successMessage}}</h3>
-			</div>
-			
-			
-			<!-- <form ng-submit="sendMail_sikaria()" name="mailForm_sikaria">
-				<input type="text" class="shart" name="name" placeholder="NAME" ng-model="mail_sikaria.name"> 
-				<input type="number" class="shart" name="mobile" placeholder="Mobile" ng-model="mail_sikaria.mobile"> 
-				<input type="number" class="shart" name="rooms" placeholder="No of Rooms" style="margin-top: 5px;" ng-model="mail_sikaria.rooms"> 
-				<input type="number" class="shart" name="persons" placeholder="No of Persons" style="margin-top: 5px;" ng-model="mail_sikaria.persons"> 
-				<label for="Check-in Date"
-					class="label_temp">Check-in Date</label> <input type="date"
-					class="shart" name="CheckInDate" placeholder="Check-in Date"
-					style="margin-top: 5px;" ng-model="mail_sikaria.CheckInDate">
-				<label for="Check-out Date" class="label_temp">Check-out
-					Date</label> <input type="date" class="shart" name="CheckOutDate"
-					placeholder="Check-out Date" ng-model="mail_sikaria.CheckOutDate">
-
-				<input type="number" class="shart" name="childrens"
-					placeholder="No of Children" style="margin-top: 5px;"
-					ng-model="mail_sikaria.childrens"> <select
-					name="Type_of Rooms"
-					style="font-size: 1em; color: #777; padding: 0.5em; border: 0.5px solid #f1eaea; border-radius: 2px; width: 49.5%; outline: none;"
-					class="shart">
-					<option value="volvo">Shared Room</option>
-					<option value="saab">Private Room</option>
-					<option value="fiat">Full Houses</option>
-				</select>
-				<textarea name="message" placeholder="MESSAGE"
-					style="margin-top: 5px;" ng-model="mail_sikaria.message"></textarea>
-				<input type="submit" value="Submit">
-			</form> -->
-			
-			<div class="panel panel-default">
-              <div class="panel-heading"><span class="lead">Contact Us </span></div>
+		
+		<div class="panel panel-default">
+              <div class="panel-heading"><span class="lead">We will contact you back </span></div>
              <div class="formcontainer" style="padding-right: 15px">
                   <form name="myForm" class="form-horizontal" >
                       
                       <div class="row">
                           <div class="form-group col-md-12">
-                              <label class="col-md-4 control-lable" for="file">Name</label>
-                              <div class="col-md-7">
-                                  <input type="text" ng-model="mail.name" name="firstName" class="username form-control input-sm" placeholder="Enter Name" required ng-minlength="3"/>
-                                  <div class="has-error" ng-show="myForm.$dirty">
-                                      <span ng-show="myForm.firstName.$error.required">This is a required field</span>
+                           
+                              <div class="col-md-6">
+                                  <input type="text" ng-model="mail.name" name="name" class="username form-control input-sm" placeholder="Enter Name" required ng-minlength="3"/>
+                                  <div class="has-error" ng-show="myForm.mail.name.$dirty">
+                                      <span ng-show="myForm.mail.name.$error.required">This is a required field</span>
+                                  </div>
+                              </div>
+                             
+                              <div class="col-md-6">
+                               <input type="number" ng-model="mail.mobile" name="mobile" class="form-control input-sm" placeholder="Enter Mobile" required/>
+                                 <div class="has-error" ng-show="myForm.mail.mobile.$dirty">
+                                      <span ng-show="myForm.mail.mobile.$error.required">This is a required field</span>
                                   </div>
                               </div>
                           </div>
@@ -405,78 +509,38 @@
 
                        <div class="row">
                           <div class="form-group col-md-12">
-                              <label class="col-md-4 control-lable" for="file">Mobile</label>
-                              <div class="col-md-7">
-                               <input type="number" ng-model="mail.mobile" name="mobile" class="form-control input-sm" placeholder="Enter Mobile" required/>
-
-                                  <div class="has-error" ng-show="myForm.$dirty">
-                                      <span ng-show="myForm.mobile.$error.required">This is a required field</span>
+                             <div class="col-md-6">
+                               <input type="number" ng-model="mail.rooms" name="rooms" class="form-control input-sm" placeholder="Enter No of Rooms" required/>
+                                <div class="has-error" ng-show="myForm.mail.rooms.$dirty">
+                                      <span ng-show="myForm.rooms.$error.required">This is a required field</span>
                                   </div>
+                              </div>
+                              <div class="col-md-6">
+                               <select  name="typesOfrooms" class="form-control"
+									ng-model="mail.typeOfRooms">
+									<option value="Single Rooms Only" >Single Rooms Only</option>
+									<option value="Entire 1st Unit (Room 501-509)">Entire 1st Unit (Room 501&#8208;509)</option>
+									<option value="Entire 2nd Unit (Room 401-403)">Entire 2nd Unit (Room 401&#8208;403)</option>
+								</select>
+
+                                  
                               </div>
                           </div>
                       </div>
-                      
-                      <div class="row">
+             <div class="row">
                           <div class="form-group col-md-12">
-                              <label class="col-md-4 control-lable" for="file">No of Rooms</label>
-                              <div class="col-md-7">
-                               <input type="number" ng-model="mail.rooms" name="noOfRooms" class="form-control input-sm" placeholder="Enter No of Rooms" required/>
+                            
+                              <div class="col-md-6">
+                               <input type="number" ng-model="mail.persons" name="persons" class="form-control input-sm" placeholder="Total No of Persons" required/>
 
-                                  <div class="has-error" ng-show="myForm.$dirty">
-                                      <span ng-show="myForm.noOfRooms.$error.required">This is a required field</span>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      
-                      <div class="row">
-                          <div class="form-group col-md-12">
-                              <label class="col-md-4 control-lable" for="file">No of Persons</label>
-                              <div class="col-md-7">
-                               <input type="number" ng-model="mail.persons" name="persons" class="form-control input-sm" placeholder="Enter No of Persons" required/>
-
-                                  <div class="has-error" ng-show="myForm.$dirty">
+                                  <div class="has-error" ng-show="myForm.mail.persons.$dirty">
                                       <span ng-show="myForm.persons.$error.required">This is a required field</span>
                                   </div>
                               </div>
-                          </div>
-                      </div>
-                      
-                      <div class="row">
-						<div class="form-group col-md-12">
-							<label class="col-md-4 control-lable" for="file">Check-in Date</label>
-							<div class="col-md-7">
-								<input type="date" ng-model="mail.checkInDate"
-									name="checkInDate" class="username form-control input-sm"
-									placeholder="Enter Check-in Date" required />
-								<div class="has-error" ng-show="myForm.$dirty">
-									<span ng-show="myForm.checkInDate.$error.required">This is a required field</span> 
-								</div> 
-							</div>
-						</div>
-					</div>
-                      
-                      <div class="row">
-						<div class="form-group col-md-12">
-							<label class="col-md-4 control-lable" for="file">Check-out Date</label>
-							<div class="col-md-7">
-								<input type="date" ng-model="mail.checkOutDate"
-									name="checkOutDate" class="username form-control input-sm"
-									placeholder="Enter Check-out Date" required />
-								<div class="has-error" ng-show="myForm.$dirty">
-									<span ng-show="myForm.checkOutDate.$error.required">This is a required field</span> 
-								</div> 
-							</div>
-						</div>
-					</div>
-                      
-                      <div class="row">
-                          <div class="form-group col-md-12">
-                              <label class="col-md-4 control-lable" for="file">No Of Childrens</label>
-                              <div class="col-md-7">
-                               <input type="number" ng-model="mail.childrens" name="childrens" class="form-control input-sm" placeholder="Enter No Of Childrens" required/>
+                               <div class="col-md-6">
+                               <input type="number" ng-model="mail.childrens" name="childrens" class="form-control input-sm" placeholder="Total No Of Childrens" required/>
 
-                                  <div class="has-error" ng-show="myForm.$dirty">
+                                  <div class="has-error" ng-show="myForm.mail.childrens.$dirty">
                                       <span ng-show="myForm.childrens.$error.required">This is a required field</span>
                                   </div>
                               </div>
@@ -484,73 +548,54 @@
                       </div>
                       
                       <div class="row">
+						<div class="form-group col-md-12">
+							<label class="col-md-6 control-lable" for="file">Check-in Date</label>
+							<div class="col-md-6">
+								<input type="date" ng-model="mail.checkInDate"
+									name="checkInDate" class="username form-control input-sm"
+									placeholder="Enter Check-in Date" required />
+								<div class="has-error" ng-show="myForm.mail.checkInDate.$dirty">
+									<span ng-show="myForm.checkInDate.$error.required">This is a required field</span> 
+								</div> 
+							</div>
+						</div>
+					</div>
+                     <div class="row">
+						<div class="form-group col-md-12">
+							<label class="col-md-6 control-lable" for="file">Check-out Date</label>
+							<div class="col-md-6">
+								<input type="date" ng-model="mail.checkOutDate"
+									name="checkOutDate" class="username form-control input-sm"
+									placeholder="Enter Check-out Date" required />
+								<div class="has-error" ng-show="myForm.mail.checkOutDate.$dirty">
+									<span ng-show="myForm.mail.checkOutDate.$error.required">This is a required field</span> 
+								</div> 
+							</div>
+						</div>
+					</div>
+                   <div class="row">
                           <div class="form-group col-md-12">
-                              <label class="col-md-4 control-lable" for="file">Type Of Rooms</label>
-                              <div class="col-md-7">
-                               <select class="form-control"
-									ng-model="mail.typeOfRooms" name="rooms" required>
-									<!-- <option>Select Type Of Rooms</option> -->
-									<option value="volvo">Shared Room</option>
-									<option value="saab">Private Room</option>
-									<option value="fiat">Full Houses</option>
-								</select>
-
-                                  <div class="has-error" ng-show="myForm.$dirty">
-                                      <span ng-show="myForm.rooms.$error.required">This is a required field</span>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      
-                      <div class="row">
-                          <div class="form-group col-md-12">
-                              <label class="col-md-4 control-lable" for="file">Message</label>
-                              <div class="col-md-7">
-
-                              <textarea class="form-control" name="message" ng-model="mail.messsage" placeholder="Enter Message" required></textarea>
-                              <div class="has-error" ng-show="myForm.$dirty">
-                                      <span ng-show="myForm.message.$error.required">This is a required field</span>
+                              <!-- <label class="col-md-4 control-lable" for="file">Message</label> -->
+                              <div class="col-md-12">
+                              <textarea class="form-control" name="message" ng-model="mail.message" placeholder="Enter Message" required></textarea>
+                              <div class="has-error" ng-show="mail.message.$dirty">
+                                      <span ng-show="myForm.mail.message.$error.required">This is a required field</span>
                                   </div> 
                               </div>
                           </div>
                       </div>
                       
-
                       <div class="row">
                           <div class="form-actions floatRight">
-                              <button type="submit" class="btn btn-success btn-sm" ng-disabled="myForm.$invalid" ng-click="submitSikariaMail()">Submit</button>
+                              <button type="submit" class="btn btn-success btn-sm" ng-disabled="myForm.$invalid" ng-click="submitSikariaMail(myForm)">Submit</button>
                               <button type="button" class="btn btn-danger btn-sm" >Cancel</button>
                           </div>
                       </div>
                   </form>
               </div>
           </div>
-			
-					
- </div>
+</div>
 		<div class="clearfix"></div>
 	</div>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Revolution Slider -->
-
-
-
-

@@ -6,14 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Custom Theme files -->
-    <!-- <meta name="keywords" content="Indolence Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script> -->
+    <meta name="keywords" content="glaubentek,glaubentek BuildEco,glaubentek BuildEco Pvt. Ltd,Ranchi, Real Estate in Ranchi, glaubentek Building Construction,Building Construction, Construction Tender, Sikaria Homes,
+	Guest House in Ranchi, Sikaria Guest House, Guest House,glaubentek Company " />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!--Google Fonts-->
     <link href='//fonts.googleapis.com/css?family=Nixie+One' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-  <title>GluabApp</title>
-
+  <!-- <title>GluabApp</title> -->
+ <title>GluabApp</title>
 	
 	<link href="<c:url value='/static/css/bootstrap.css' />" rel="stylesheet" />
 	<link href="<c:url value='/static/css/bootstrap.min.css' />" rel="stylesheet" />
@@ -38,8 +38,7 @@
 <div></div>
 
 <main>
-<!-- <page-header></page-header> -->
-  <!-- <div class="banner"> -->
+
         <div class="header">
                 <div style="margin-top:-6px;" class="container">
                 <div class="col-md-4 col-sm-4 logo">
@@ -50,11 +49,7 @@
                     <ul class="setli">
                         <li style="padding-right:5px;"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> glaubentekbuildeco@gmail.com   </li>
                         <li style="padding-right:5px;"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> +91 9798327999</li>
-
-
-                        <!-- <li class="glyphicon-envelope"> glaubentekbuildeco@gmail.com</li> -->
-
-                    </ul>
+              </ul>
                 </div>
                 <div class="col-md-2 col-sm-2 details">
                     <div class="social">
@@ -95,34 +90,12 @@
 			            <li><a href="#/sikariaHome">SikariaHome</a></li>
 			            <li><a href="#/contactus">Contact</a></li>
 			            
-			            <%-- <li ng-if="showMenu()"><a href="#/listAllPosts">Manage Blog</a></li>
-			            <li ng-if="showMenu()"><a href="#/tenderAlert">Tender Notifications</a></li>
-			            <li ng-if="showMenu()"><a href="#/listAllUsers">Manage Users</a></li>
-			            
-			            <li ng-if="showMenu()"><a href="javascript:document.getElementById('logout').submit()">Logout</a>
-						</li>
-						<form id="logout" action="logout" method="post" >
-			  						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-						</form> --%>
-                        
                     </ul>
                 </div>
             </div>
         </div>
-        <!-- <div class="container">
-            <div class="banner-bottom wow fadeInLeft animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
-                <div class="bann-para">
-                    <h2>Welcome to GlaubenTek BuildEco</h2>
-                    <p>
-                        We are a Ranchi based pan India Real Estate Development and Constructions Company. Our Service spectrum covers Real Estate Development, Commercial and Residential Multi Storied Buildings, Infrastructure Developments and Construction Consultancy.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div> -->
-  
-
-      <div ui-view autoscroll-body-top></div>
+       
+      <div ui-view ></div>
   
   <page-footer></page-footer>
   
@@ -162,9 +135,6 @@
 <script src="<c:url value='/static/lib/angular-super-gallery.js' />"></script>
 <script src="<c:url value='/static/app/directives/dirPagination.js' />"></script>
 
-<%-- <script src="<c:url value='/static/lib/wow.min.js' />"></script> --%>
-<%-- <script src="<c:url value='/static/lib/main.js' />"></script> --%>
-
 <script src="<c:url value='/static/lib/app.js' />"></script>
 <script src="<c:url value='/static/lib/pages.run.js' />"></script>
 <script src="<c:url value='/static/lib/pages.module.js' />"></script>
@@ -174,12 +144,14 @@
 <script src="<c:url value='/static/app/service/postService.js' />"></script>
 <script src="<c:url value='/static/app/service/contactUsService.js' />"></script>
 <script src="<c:url value='/static/app/service/sikariaHomesService.js' />"></script>
+<script src="<c:url value='/static/app/service/userService.js' />"></script>
 <script src="<c:url value='/static/app/controller/blogCtrl.js' />"></script>
 <script src="<c:url value='/static/app/controller/postCtrl.js' />"></script>
 <script src="<c:url value='/static/app/controller/contactUsCtrl.js' />"></script>
 <script src="<c:url value='/static/app/controller/SikariaHomesCtrl.js' />"></script>
 <script src="<c:url value='/static/app/controller/pageHeaderCtrl.js' />"></script>
 <script src="<c:url value='/static/app/controller/homeCtrl.js' />"></script>
+<script src="<c:url value='/static/app/controller/userCtrl.js' />"></script>
 
 
 <script>

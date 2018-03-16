@@ -22,7 +22,7 @@
 					<br><br>
                     <!-- <textarea name="body" placeholder="Post Body" ng-model="pCtrl.post.fullText" class="form-control"></textarea> -->
                     
-                    <textarea name="editor1" class="content-box"
+                    <textarea name="editor1" class="content-box" style="height: 400px;"
 					        ng-model="pCtrl.post.fullText"
 					        markdown-editor="{'iconlibrary': 'fa', addExtraButtons: true, resize: 'vertical'}"
 					        on-fullscreen="onFullScreenCallback()"
@@ -31,6 +31,8 @@
 					</textarea>
 					
                     <div marked="editor1" class="markdown" style="padding: 20px"></div>
+				<br><br>
+                    <!-- <textarea name="body" placeholder="Post Body" ng-model="pCtrl.post.fullText" class="form-control" style="height: 400px;" ></textarea> -->
                     <br><br>
                     <!-- <md ng-model="pCtrl.post.fullText"></md> -->
                     <!-- <input type="submit" value="Post"> -->
@@ -38,11 +40,7 @@
                 </form>
 
             </div>
-
-           
-
-           
-            <div class="clearfix"> </div>
+          <div class="clearfix"> </div>
         </div>
     </div>
 </div>

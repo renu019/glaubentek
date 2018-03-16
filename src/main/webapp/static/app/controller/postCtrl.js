@@ -30,7 +30,7 @@
 			blogService.getPostsById(postId).then(
 	   	            function(d) {
 	   	            	self.post = d;
-	   	            	console.log('self.post  ::  ',self.post);
+	   	            	//console.log('self.post  ::  ',self.post);
 	   	            	angular.forEach(d, function(value, key){
 	   	            		console.log("d.tags  ::  "+d.tags);
 	   	            		d.tags = [];
@@ -46,7 +46,7 @@
 			postService.getTagList().then(
 	   	            function(d) {
 	   	            	$scope.masterTagList = d;
-	   	            	console.log('$scope.masterTagList  ::  ',$scope.masterTagList);
+	   	            	//console.log('$scope.masterTagList  ::  ',$scope.masterTagList);
 	   	            	/*angular.forEach(d, function(value, key){
 	   	            		
 	   	         		});*/
@@ -62,7 +62,7 @@
 	   	            function(d) {
 	   	            	$scope.postsList = d.content;
 	   	            	$scope.postsFullList = d;
-	   	            	console.log('$scope.postsFullList  ::  ',$scope.postsFullList);
+	   	            	//console.log('$scope.postsFullList  ::  ',$scope.postsFullList);
 	   	            	/*angular.forEach(d, function(value, key){
 	   	            		
 	   	         		});*/
@@ -79,14 +79,14 @@
 	    }
 	  
 	  $scope.editPost = function(postId) {
-		  console.log("postId  ::  "+postId);
+		  //console.log("postId  ::  "+postId);
 		  $state.go("editPost",{'postId':postId})
 	  }
 	  
 	  $scope.deletePost = function(postId) {
 		  postService.deletePost(postId).then(
 		            function(d) {
-		            	console.log("d  ::  "+d);
+		            	//console.log("d  ::  "+d);
 		            	//$window.location.href = '#/listAllPosts';
 		            	getAllPosts(1);
 		            },function(errResponse){
@@ -94,9 +94,11 @@
 		            }
 			   	 );
 	  }
+	  $scope.cancelPost = function() {
+      	$window.location.href = '#/listAllPosts';
+}
 	  
 	  $scope.submitPost = function() {
-		  console.log("self.post  ::  ",self.post);
 		  
 		  postService.createPost(self.post).then(
             function(d) {
@@ -110,7 +112,7 @@
 	  
 	  $scope.selected_baselines = [];
 	  
-	  console.log("$scope.selected_baselines  ::  "+$scope.selected_baselines);
+	//  console.log("$scope.selected_baselines  ::  "+$scope.selected_baselines);
 	  
       $scope.selected_baseline_settings = {
       	template: '<b>{{option.name}}</b>',
@@ -123,10 +125,13 @@
       $scope.selected_baselines_customTexts = {buttonDefaultText: 'Select Categories'};
       
       $scope.getData = function(pageNo) {
-  		console.log("pageNo  ::  "+pageNo);
+  		//console.log("pageNo  ::  "+pageNo);
   		getAllPosts(pageNo);
   	  }
 	  
+      $scope.resetForm = function() {
+    	  self.post = {title:'', shortText:'', fullText:'', category:''};
+      }
   }
 
 })();

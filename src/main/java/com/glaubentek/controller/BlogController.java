@@ -6,6 +6,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpMethod;
@@ -36,6 +38,8 @@ import com.glaubentek.service.UserService;
 @RestController
 public class BlogController {
 
+	private final Logger logger = LoggerFactory.getLogger(BlogController.class);
+	
     @Autowired
     private PostService postService;
 
@@ -56,25 +60,20 @@ public class BlogController {
     
     @GetMapping(value="/allPosts/{pageNo}")
     public Page<Post> getAllPosts(@PathVariable("pageNo") int pageNo){
-        return postService.getAllPosts(pageNo - 1, 10);
+    	logger.info("BlogController :: getAllPosts pageNo  ::  "+pageNo);
+        return postService.getAllPosts(pageNo - 1, 7);
     }
 
     @GetMapping(value="/the_post/{id}")
     public Post getPostById(@PathVariable Long id){
+    	logger.info("BlogController :: getPostById id  ::  "+id);
         return postService.getPost(id);
     }
     
-    /*@GetMapping(value="/postByTag/{tags}")
-    public Page<Post> getPostByTag(@PathVariable("tags") String tags) {
-    	
-    	List<String> tagNames = Arrays.stream(tags.split(",")).map(String::trim).distinct().collect(Collectors.toList());
-    	
-        return postService.findByTags(tagNames, 0, 10);
-    }*/
     
     @GetMapping(value="/postByMonth")
     public List<MonthAndCount> getPostByMonth() {
-    	
+    	logger.info("BlogController :: getPostByMonth  ::  ");
     	List<Object[]> monthlyPosts = postService.findPostByMonth();
     	List<MonthAndCount> monthlyList = new ArrayList<MonthAndCount>();
     	for(Object[] obj : monthlyPosts) {
@@ -95,54 +94,37 @@ public class BlogController {
 
     @PostMapping(value="/post")
     public ResponseEntity<Void> publishPost(@RequestBody Post post){
+    	logger.info("BlogController :: publishPost  ::  ");
         //CustomUserDetails userDetails = (CustomUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if(post.getDateCreated() == null)
             post.setDateCreated(new Date());
         //post.setCreator(userService.getUser(userDetails.getUsername()));
-        post.setCreator(userService.getUser("admin"));
-        
-        if(post.getFullText() != null) {
-        	post.setShortText(post.getFullText().substring(0, 50));
-        }
-        
-        /*List<Comment> commentList = post.getComments();
-        for(Comment comment : commentList) {
-        	comment.setPost(post);
-        	comment.setCreator(userService.getUser("admin"));
-        }*/
-        
-        /*List<Tag> tagList = post.getTags();
-        for(Tag tag : tagList) {
-        	tag.setPost(post);
-        }*/
-        
-        postService.insert(post);
-        return new ResponseEntity<Void>(HttpStatus.CREATED);
-    }
-    
-    @PutMapping(value="/post")
-    public ResponseEntity<Void> updatePost(@RequestBody Post post){
-        //CustomUserDetails userDetails = (CustomUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        if(post.getDateCreated() == null)
-            post.setDateCreated(new Date());
-        //post.setCreator(userService.getUser(userDetails.getUsername()));
+        //post.setCreator(userService.getUser("admin"));
+        //System.out.println("User Name  ::  "+SecurityContextHolder.getContext().getAuthentication().getName());
         post.setCreator(userService.getUser(SecurityContextHolder.getContext().getAuthentication().getName()));
         
         if(post.getFullText() != null) {
         	post.setShortText(post.getFullText().substring(0, 250));
         }
         
-        /*List<Comment> commentList = post.getComments();
-        for(Comment comment : commentList) {
-        	comment.setPost(post);
-        	comment.setCreator(userService.getUser("admin"));
-        }*/
+       
+        postService.insert(post);
+        return new ResponseEntity<Void>(HttpStatus.CREATED);
+    }
+    
+    @PutMapping(value="/post")
+    public ResponseEntity<Void> updatePost(@RequestBody Post post){
+    	logger.info("BlogController :: updatePost  ::  ");
+        if(post.getDateCreated() == null)
+            post.setDateCreated(new Date());
+        //post.setCreator(userService.getUser(userDetails.getUsername()));
+       // System.out.println("User Name  ::  "+SecurityContextHolder.getContext().getAuthentication().getName());
+        post.setCreator(userService.getUser(SecurityContextHolder.getContext().getAuthentication().getName()));
         
-        /*List<Tag> tagList = post.getTags();
-        for(Tag tag : tagList) {
-        	tag.setPost(post);
-        }*/
-        
+        if(post.getFullText() != null) {
+        	post.setShortText(post.getFullText().substring(0, 250));
+        }
+       
         postService.updatePost(post);
         return new ResponseEntity<Void>(HttpStatus.OK);
     }
@@ -151,18 +133,21 @@ public class BlogController {
 
     @GetMapping(value="/posts/{username}")
     public List<Post> postsByUser(@PathVariable String username){
+    	logger.info("BlogController :: postsByUser  ::  ");
         return postService.findByUser(userService.getUser(username));
     }
 
     @DeleteMapping(value = "/deletePost/{postId}")
     public ResponseEntity<Void> deletePost(@PathVariable Long postId){
-    	System.out.println("postId  ::  "+postId);
+    	//System.out.println("postId  ::  "+postId);
+    	logger.info("BlogController :: deletePost  ::  ");
         postService.deletePost(postId);
         return new ResponseEntity<Void>(HttpStatus.OK);
     }
 
     @DeleteMapping(value = "/comment/{id}")
     public boolean deleteComment(@PathVariable Long id){
+    	
         return commentService.deletePost(id);
     }
 
@@ -186,6 +171,7 @@ public class BlogController {
     
     @GetMapping(value = "/tags")
     public List<Tag> getTags(){
+    	
     	List<Tag> tagList = new ArrayList<Tag>();
     	List<String> strList = new ArrayList<String>();
     	strList = tagService.getTags();
@@ -199,7 +185,7 @@ public class BlogController {
     
     @GetMapping(value="/tagAndCount")
     public List<TagAndCount> getTagAndCount() {
-    	
+    	logger.info("BlogController :: getTagAndCount  ::  ");
     	List<Object[]> tagCount = postService.findTagsAndCount();
     			
     	List<TagAndCount> tagCountList = new ArrayList<TagAndCount>();

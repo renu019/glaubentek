@@ -36,7 +36,7 @@
 						${fn:escapeXml(logoutMsg)}
 					  </c:if>
 					  </div>
-					<input type="text" class="text" placeholder="User Name" name="username" required>
+					<input type="text" class="text" placeholder="Login UserName" name="username" required>
 					<input type="password" placeholder="Password" name="password" required>
 					<div class="submit">
 						<input type="submit" value="Login">

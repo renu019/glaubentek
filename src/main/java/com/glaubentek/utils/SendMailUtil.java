@@ -93,17 +93,18 @@ public class SendMailUtil {
         
         String subject = "SikariaHomes Booking Form";
       //  String contactFrom = "Contact mail from : " + mailContent.getEmail();
-        String messageBody = "Name: "+mailContent.getName() + "\n" + 
-        					 "Mobile: "+mailContent.getMobile()+"\n"+
+        String messageBody = "Sikaria Booking Form"+ "\n" +
+        		"Name: "+mailContent.getName() + "\n" + 
+       					 "Mobile: "+mailContent.getMobile()+"\n"+
         					 "Number of Rooms: "+mailContent.getRooms()+"\n"+
         					 "number of Persons: "+mailContent.getPersons()+"\n"+
         					 "check in Date : "+mailContent.getCheckInDate()+"\n"+
         					 "check out date: "+mailContent.getCheckOutDate()+"\n"+
-        					 "number of childrens: "+mailContent.getChidrens()+"\n"+
+        					 "number of childrens: "+mailContent.getChildrens()+"\n"+
         					 "Type of rooms: "+mailContent.getTypeOfRooms()+"\n"+
         					 "Message: "+mailContent.getMessage()+"\n"
         					 ;
-        
+        System.out.println("message  ::  "+messageBody);
         Session session = Session.getDefaultInstance(props);
         MimeMessage message = new MimeMessage(session);
 

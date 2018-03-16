@@ -7,7 +7,7 @@ private String rooms;
 private String persons;
 private String checkInDate;
 private String checkOutDate;
-private String chidrens;
+private String childrens;
 private String typeOfRooms;
 private String message;
 
@@ -53,17 +53,17 @@ public String getMessage() {
 public void setMessage(String message) {
 	this.message = message;
 }
-public String getChidrens() {
-	return chidrens;
-}
-public void setChidrens(String chidrens) {
-	this.chidrens = chidrens;
-}
 public String getTypeOfRooms() {
 	return typeOfRooms;
 }
 public void setTypeOfRooms(String typeOfRooms) {
 	this.typeOfRooms = typeOfRooms;
+}
+public String getChildrens() {
+	return childrens;
+}
+public void setChildrens(String childrens) {
+	this.childrens = childrens;
 }
 
 

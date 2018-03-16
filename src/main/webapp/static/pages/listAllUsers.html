@@ -19,8 +19,8 @@
 					<thead>
 						<tr>
 							<th>Sl No#</th>
-							<th>Login User Id</th>
-							<th>User Name</th>
+							<th>Login UserName</th>
+							<th>Full Name</th>
 							<th>Created Date</th>
 							<th>Actions</th>		
 							<th>
@@ -30,7 +30,7 @@
 					</thead>
 					<tbody>
 						<tr dir-paginate="users in usersList|itemsPerPage:usersFullList.size" total-items="usersFullList.totalElements">
-							<td>{{$index}}</td>
+							<td>{{$index+1}}</td>
 							<td>{{users.username}}</td>
 							<td>{{users.firstName}} {{users.lastName}}</td>
 							<td>{{users.dateCreated | date:'dd MMM yyyy'}}</td>

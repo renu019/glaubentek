@@ -19,18 +19,18 @@
 	  
 	  
 	  var userId = $stateParams.userId;
-	  console.log('userId  ::  '+userId);
+	 // console.log('userId  ::  '+userId);
 	  
 	  if(userId != undefined) {
 		  getUserById(userId);
 	  }
 	  
 	  function getUserById(userId) {
-			console.log("inside getUserById  ::  "+userId);
+			//console.log("inside getUserById  ::  "+userId);
 			userService.getUserById(userId).then(
 	   	            function(d) {
 	   	            	self.user = d;
-	   	            	console.log('self.user  ::  ',self.user);
+	   	            	//console.log('self.user  ::  ',self.user);
 	   	            },function(errResponse){
 	   	              console.error('Error while getPostsById');
 	   	            }
@@ -38,12 +38,12 @@
 		}
 	  
 	  function getAllUsers(pageNo) {
-			console.log("inside getAllUsers");
+			//console.log("inside getAllUsers");
 			userService.getAllUsers(pageNo).then(
 	   	            function(d) {
 	   	            	$scope.usersList = d.content;
 	   	            	$scope.userFullList = d;
-	   	            	console.log('$scope.userFullList  ::  ',$scope.userFullList);
+	   	            	//console.log('$scope.userFullList  ::  ',$scope.userFullList);
 	   	            	/*angular.forEach(d, function(value, key){
 	   	            		
 	   	         		});*/
@@ -60,15 +60,15 @@
 	    }
 	  
 	  $scope.editUser = function(userId) {
-		  console.log("userId  ::  "+userId);
+		  //console.log("userId  ::  "+userId);
 		  $state.go("editUser",{'userId':userId})
 	  }
 	  
 	  $scope.deleteUser = function(userId) {
 		  userService.deleteUser(userId).then(
 		            function(d) {
-		            	console.log("d  ::  "+d);
-		            	//$window.location.href = '#/listAllUsers';
+		            	//console.log("d  ::  "+d);
+		            	$window.location.href = '#/listAllUsers';
 		            	getAllUsers(1);
 		            },function(errResponse){
 		              console.error('Error while deleteUser');
@@ -76,8 +76,12 @@
 			   	 );
 	  }
 	  
+	  $scope.cancelUser = function() {
+		            	$window.location.href = '#/listAllUsers';
+	  }
+	  
 	  $scope.submitUser = function() {
-		  console.log("self.user  ::  ",self.user);
+		 // console.log("self.user  ::  ",self.user);
 		  
 		  userService.createUser(self.user).then(
             function(d) {
@@ -91,7 +95,7 @@
 	  
       
       $scope.getData = function(pageNo) {
-  		console.log("pageNo  ::  "+pageNo);
+  		//console.log("pageNo  ::  "+pageNo);
   		getAllUsers(pageNo);
   	  }
 	  

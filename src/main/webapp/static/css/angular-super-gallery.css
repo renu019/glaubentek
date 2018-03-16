@@ -2,7 +2,7 @@ body.asg-yhidden {
   overflow-y: hidden; }
 
 .asg-image {
-  position: relative;
+ /*  position: relative; */
   overflow: hidden; }
   .asg-image .images {
     position: absolute;

@@ -15,13 +15,13 @@
 	  getTagAndCount();
 	  
 	  var postId = $stateParams.postId;
-	  console.log('postId  ::  '+postId);
+	 // console.log('postId  ::  '+postId);
 	  
 	  if(postId != undefined) {
 		  getPostsById(postId);
 	  }
 	  
-	  console.log('$scope.postId  ::  '+$scope.postId);
+	 // console.log('$scope.postId  ::  '+$scope.postId);
 	  
 	function getAllPosts(pageNo) {
 		console.log("inside getAllPosts");
@@ -29,7 +29,7 @@
    	            function(d) {
    	            	$scope.postsList = d.content;
    	            	$scope.postsFullList = d;
-   	            	console.log('$scope.postsFullList  ::  ',$scope.postsFullList);
+   	            	//console.log('$scope.postsFullList  ::  ',$scope.postsFullList);
    	            	/*angular.forEach(d, function(value, key){
    	            		
    	         		});*/
@@ -44,7 +44,7 @@
 		blogService.getRecentPosts().then(
    	            function(d) {
    	            	$scope.recentPostsList = d;
-   	            	console.log('$scope.recentPostsList  ::  ',$scope.recentPostsList);
+   	            	//console.log('$scope.recentPostsList  ::  ',$scope.recentPostsList);
    	            	/*angular.forEach(d, function(value, key){
    	            		
    	         		});*/
@@ -59,7 +59,7 @@
 		blogService.getTagAndCount().then(
    	            function(d) {
    	            	$scope.tagCountList = d;
-   	            	console.log('$scope.tagCountList  ::  ',$scope.tagCountList);
+   	            	//console.log('$scope.tagCountList  ::  ',$scope.tagCountList);
    	            	/*angular.forEach(d, function(value, key){
    	            		
    	         		});*/
@@ -74,7 +74,7 @@
 		blogService.getPostsByMonth().then(
    	            function(d) {
    	            	$scope.postsMonthlyList = d;
-   	            	console.log('$scope.postsMonthlyList  ::  ',$scope.postsMonthlyList);
+   	            	//console.log('$scope.postsMonthlyList  ::  ',$scope.postsMonthlyList);
    	            	/*angular.forEach(d, function(value, key){
    	            		
    	         		});*/
@@ -89,7 +89,7 @@
 		blogService.getPostsById(postId).then(
    	            function(d) {
    	            	$scope.singlePost = d;
-   	            	console.log('$scope.singlePost  ::  ',$scope.singlePost);
+   	            	//console.log('$scope.singlePost  ::  ',$scope.singlePost);
    	            	/*angular.forEach(d, function(value, key){
    	            		
    	         		});*/

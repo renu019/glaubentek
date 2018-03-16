@@ -19,7 +19,7 @@
 				 $http.get('userRole').
 			        then(function(data, status, headers) {
 			            $scope.userRole = data.data.role;
-			            console.log("$scope.userRole  ::  ",$scope.userRole);
+			         //   console.log("$scope.userRole  ::  ",$scope.userRole);
 			            },
 			        function(errResponse) {
 			            console.log("error in getUserRole");

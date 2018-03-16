@@ -57,11 +57,23 @@
 			</div>
                 
                 <form ng-submit="sendMail()" name="mailForm">
-                    <input type="text" class="shart" name="name" placeholder="NAME" ng-model="mail.name">
-                    <input type="text" class="shart" name="email" placeholder="EMAIL" ng-model="mail.email">
-                    <input type="text" class="long" name="subject" placeholder="SUBJECT" ng-model="mail.subject">
-                    <textarea name="message" placeholder="MESSAGE" ng-model="mail.message"></textarea>
-                    <input type="submit" value="Submit">
+                    <input type="text" class="shart" name="name" placeholder="NAME" ng-model="mail.name" required>
+                    <div class="has-error" ng-show="mailForm.mail.name.$dirty">
+                        <span ng-show="mailForm.mail.name.$error.required">This is a required field</span>
+                    </div>
+                    <input type="text" class="shart" name="email" placeholder="EMAIL" ng-model="mail.email" required>
+                     <div class="has-error" ng-show="mailForm.mail.email.$dirty">
+                        <span ng-show="mailForm.mail.email.$error.required">This is a required field</span>
+                    </div>
+                    <input type="text" class="long" name="subject" placeholder="SUBJECT" ng-model="mail.subject" required>
+                    <div class="has-error" ng-show="mailForm.mail.subject.$dirty">
+                        <span ng-show="mailForm.mail.subject.$error.required">This is a required field</span>
+                    </div>
+                    <textarea name="message" placeholder="MESSAGE" ng-model="mail.message" required></textarea>
+                    <div class="has-error" ng-show="mailForm.mail.message.$dirty">
+                        <span ng-show="mailForm.mail.message.$error.required">This is a required field</span>
+                    </div>
+                    <input type="submit" value="Submit" ng-disabled="mailForm.$invalid">
                 </form>
 
             </div>

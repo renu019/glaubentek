@@ -587,6 +587,7 @@ var angularSuperGallery;
                 preloadDelay: 770,
                 preload: [],
                 modal: {
+                	width:200,
                     title: '',
                     subtitle: '',
                     caption: {
